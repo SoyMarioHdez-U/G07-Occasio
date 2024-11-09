@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_login"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="172dp"
+        android:layout_height="169dp"
+        app:srcCompat="@drawable/occasio" />
+
+    <TextView
+        android:id="@+id/TvBienvenida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/tx_bienvenido"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/msj_bienvenida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="Por favor, inicie sesión"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/tv_usuario"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:paddingTop="20dp"
+        android:text="Usuario o correo electrónico:"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/et_usuario"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:background="@drawable/redondeado"
+        android:ems="10"
+        android:hint="usuario@correo.com"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/material_dynamic_neutral30" />
+
+    <TextView
+        android:id="@+id/tv_password"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:paddingTop="10dp"
+        android:text="Contraseña:"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:background="@drawable/redondeado"
+        android:ems="10"
+        android:hint="********"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textColorHint="@color/material_dynamic_neutral30"/>
+
+
+
+    <Button
+
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/botones"
+        android:padding="10dp"
+        android:text="ENTRAR"
+        android:textColor="@color/white"
+        app:iconPadding="40dp"
+        android:onClick="ingresar"/>
+
+    <LinearLayout
+        android:layout_width="240dp"
+        android:layout_height="88dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:text="¿No tienes cuenta?"
+            android:textColor="@color/white" />
+
+        <TextView
+
+            android:layout_width="15dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:onClick="AbrirRegistrarse"
+            android:text="Regístrate aquí"
+            android:textColor="@color/botones" />
+    </LinearLayout>
+
+
+</LinearLayout>

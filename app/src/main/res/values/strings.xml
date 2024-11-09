@@ -1,0 +1,9 @@
+<resources>
+    <string name="tx_cat_musica">MÚSICA</string>
+    <string name="tx_cat_religoso">RELIGIOSO</string>
+    <string name="tx_cat_deportes">DEPORTES</string>
+    <string name="tx_cat_cultura">CULTURA</string>
+    <string name="tx_bienvenido">¡Bienvenido!</string>
+    <string name="app_name">Occasio</string>
+
+</resources>
