@@ -41,9 +41,8 @@
     <string name="textoEventoGratuito">Evento gratuito</string>
     <string name="textoTVEntradaGeneral">Entrada General</string>
     <string name="filler$">$</string>
-    <string name="valorDefaultPrecioGeneral">8.00</string>
+    <string name="valorDefaultPrecioGeneral">Ingrese una descripción de los precios de entrada a su evento</string>
     <string name="textoTVEntradaVIP">Entrada VIP</string>
-    <string name="ValorDefaultPrecioVIP">12.00</string>
     <string name="textoTVAdvertencia">El manejo de los cobros es completa responsabilidad del organizador</string>
     <string name="textoBtnCrearEvento">Crear evento</string>
     <string name="tx_cat_musica">MÚSICA</string>

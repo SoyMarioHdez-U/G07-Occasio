@@ -46,40 +46,17 @@
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp">
 
-        <TextView
-            android:id="@+id/tvEntradaGeneral"
-            android:layout_width="160dp"
-            android:layout_height="match_parent"
-            android:text="@string/textoTVEntradaGeneral"
-            android:textSize="18sp"
-            android:textStyle="normal"
-            android:background="@drawable/borde"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:gravity="center"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/filler$"
-            android:textSize="18sp"
-            android:textStyle="normal"
-            android:paddingStart="15dp"
-            android:paddingEnd="5dp"
-            />
-
         <EditText
             android:id="@+id/etPrecioEntradaGeneral"
-            android:layout_width="75dp"
-            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
             android:background="@drawable/borde"
-            android:gravity="center"
+            android:gravity="top"
             android:importantForAutofill="no"
-            android:inputType="numberDecimal"
+            android:inputType="textMultiLine"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
-            android:text="@string/valorDefaultPrecioGeneral"
+            android:hint="@string/valorDefaultPrecioGeneral"
             tools:ignore="LabelFor" />
 
     </LinearLayout>
@@ -90,44 +67,7 @@
         android:orientation="horizontal"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginTop="10dp">
-
-        <TextView
-            android:id="@+id/tvEntradaVIP"
-            android:layout_width="160dp"
-            android:layout_height="match_parent"
-            android:text="@string/textoTVEntradaVIP"
-            android:textSize="18sp"
-            android:textStyle="normal"
-            android:background="@drawable/borde"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:gravity="center"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/filler$"
-            android:textSize="18sp"
-            android:textStyle="normal"
-            android:paddingStart="15dp"
-            android:paddingEnd="5dp"
-            />
-
-        <EditText
-            android:id="@+id/etPrecioEntradaVIP"
-            android:layout_width="75dp"
-            android:layout_height="50dp"
-            android:background="@drawable/borde"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:text="@string/ValorDefaultPrecioVIP"
-            tools:ignore="LabelFor" />
-
-    </LinearLayout>
+        android:layout_marginTop="10dp"/>
 
     <View
         android:layout_width="match_parent"
