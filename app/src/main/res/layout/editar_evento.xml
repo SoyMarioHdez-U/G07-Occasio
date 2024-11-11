@@ -28,7 +28,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="195dp"
                     android:layout_gravity="center"
-                    android:contentDescription="@string/texto_IVBannerEvento"
+                    android:contentDescription="@string/texto_iv_banner_evento"
                     android:padding="50dp"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/icono_imagen" />
@@ -118,7 +118,7 @@
                     android:inputType="text"
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
-                    android:text="@string/textoETDireccionEvento" />
+                    android:text="@string/texto_et_direccion_evento" />
 
             </LinearLayout>
 
@@ -141,7 +141,7 @@
                         android:id="@+id/tvFecha"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/textoTVFechaEvento"
+                        android:text="@string/texto_tv_fecha_evento"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -154,7 +154,7 @@
                         android:background="@color/white"
                         android:ems="10"
                         android:gravity="center"
-                        android:hint="@string/textoETFechaEvento"
+                        android:hint="@string/texto_et_fecha_evento"
                         android:importantForAutofill="no"
                         android:inputType="date" />
 
@@ -170,7 +170,7 @@
                         android:id="@+id/tvHora"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/textoTVHoraEvento"
+                        android:text="@string/texto_tv_hora_evento"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -182,7 +182,7 @@
                         android:background="@color/white"
                         android:ems="10"
                         android:gravity="center"
-                        android:hint="@string/textoETHoraEvento"
+                        android:hint="@string/texto_et_hora_evento"
                         android:importantForAutofill="no"
                         android:inputType="time" />
 
@@ -203,7 +203,7 @@
                     android:id="@+id/tvCategoria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/textoTVCategoriaEvento"
+                    android:text="@string/texto_tv_categoria_evento"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -225,7 +225,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="5dp"
-                android:text="@string/textoTVDescripcionEvento"
+                android:text="@string/texto_tv_descripcion_evento"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -240,7 +240,7 @@
                 android:background="@color/white"
                 android:ems="10"
                 android:gravity="start|top"
-                android:hint="@string/textoETDescripcionEvento"
+                android:hint="@string/texto_et_descripcion_evento"
                 android:importantForAutofill="no"
                 android:inputType="textMultiLine"
                 android:paddingStart="5dp"
@@ -253,7 +253,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginTop="5dp"
-                android:text="@string/textoTVAdmisionEvento"
+                android:text="@string/texto_tv_administracion_evento"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 />
@@ -268,7 +268,7 @@
                 android:id="@+id/tvpregunta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/textoTVPregunta"
+                android:text="@string/texto_tv_pregunta"
                 android:textSize="18sp"
                 android:textStyle="normal"
                 android:layout_marginStart="15dp"
@@ -296,14 +296,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:checked="true"
-                        android:text="@string/textoSi" />
+                        android:text="@string/texto_si" />
 
                     <RadioButton
                         android:id="@+id/rbNo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/textoNo" />
+                        android:text="@string/texto_no" />
                 </RadioGroup>
 
                 <LinearLayout
@@ -316,7 +316,7 @@
                         android:id="@+id/tvRangoEdad"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/textoTVRangoEdad"
+                        android:text="@string/texto_tv_rango_edad"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -329,7 +329,7 @@
                             android:id="@+id/tvEdadMinima"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/TextoMinima"
+                            android:text="@string/texto_edad_minima"
                             android:textSize="18sp"
                             android:textStyle="normal" />
 
@@ -364,7 +364,7 @@
                             android:id="@+id/tvEdadMaxima"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/textoMaxima"
+                            android:text="@string/texto_edad_maxima"
                             android:textSize="18sp"
                             android:textStyle="normal" />
 
@@ -397,7 +397,7 @@
                 android:id="@+id/swAceptarSolicitudManualmente"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="@string/textoSWAceptarManualmente"
+                android:text="@string/texto_aceptar_manualmente"
                 android:textSize="18sp"
                 tools:ignore="UseSwitchCompatOrMaterialXml"
                 android:layout_marginStart="15dp"
@@ -411,7 +411,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginTop="5dp"
-                android:text="@string/textoTVRequisitosAdicionales"
+                android:text="@string/texto_tv_requisitos_adicionales"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 />
@@ -445,7 +445,7 @@
                         android:id="@+id/tvAforo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/TextoTVAforo"
+                        android:text="@string/texto_tv_aforo"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -458,7 +458,7 @@
                             android:id="@+id/tvAforoMinimo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/textoMinimo"
+                            android:text="@string/texto_afo_minimo"
                             android:textSize="18sp"
                             android:textStyle="normal" />
 
@@ -491,7 +491,7 @@
                             android:id="@+id/tvAforoMaximo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/textoMaximo"
+                            android:text="@string/texto_afo_maximo"
                             android:textSize="18sp"
                             android:textStyle="normal" />
 
@@ -530,7 +530,7 @@
                         android:id="@+id/swCancelarSiNoCumpleAforo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/textoSWCancelar"
+                        android:text="@string/texto_sw_cancelar"
                         android:textSize="18sp"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
@@ -584,7 +584,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="@string/textoMeses"
+                            android:text="@string/texto_meses"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -615,7 +615,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="@string/textoDias"
+                            android:text="@string/texto_dias"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -643,7 +643,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="@string/textoHoras"
+                            android:text="@string/texto_horas"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -673,7 +673,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="@string/textoMinutos"
+                            android:text="@string/texto_minutos"
                             android:textSize="12sp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -684,7 +684,7 @@
                 android:id="@+id/swGaleria"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="@string/textoSWGaleriaEvento"
+                android:text="@string/texto_sw_galeria_evento"
                 android:textSize="18sp"
                 tools:ignore="UseSwitchCompatOrMaterialXml"
                 android:layout_marginStart="15dp"
@@ -694,7 +694,7 @@
                 android:id="@+id/swPermitirSubirFotos"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="@string/textoSWPermitirSubirFotos"
+                android:text="@string/texto_sw_permitir_subir_fotos"
                 android:textSize="18sp"
                 tools:ignore="UseSwitchCompatOrMaterialXml"
                 android:layout_marginStart="15dp"
@@ -706,14 +706,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="@string/textoTVPagos"
+                android:text="@string/texto_tv_pagos"
                 android:textSize="20sp"
                 android:textStyle="bold" />
             <TextView
                 android:id="@+id/tvInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/textotvInfoPagos"
+                android:text="@string/texto_tv_info_pagos"
                 android:textSize="18sp"
                 android:textStyle="normal"
                 android:layout_marginStart="15dp"
@@ -726,7 +726,7 @@
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="15dp"
-                android:text="@string/textoEventoGratuito"
+                android:text="@string/texto_evento_gratuito"
                 android:textSize="18sp"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
@@ -741,7 +741,7 @@
                     android:id="@+id/tvEntradaGeneral"
                     android:layout_width="160dp"
                     android:layout_height="match_parent"
-                    android:text="@string/textoTVEntradaGeneral"
+                    android:text="@string/texto_tv_entrada_general"
                     android:textSize="18sp"
                     android:textStyle="normal"
                     android:background="@drawable/borde"
@@ -753,7 +753,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/filler$"
+                    android:text="@string/filler_dinero"
                     android:textSize="18sp"
                     android:textStyle="normal"
                     android:paddingStart="15dp"
@@ -770,7 +770,7 @@
                     android:inputType="numberDecimal"
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp"
-                    android:text="@string/valorDefaultPrecioGeneral"
+                    android:text="@string/valor_default_precio_general"
                     tools:ignore="LabelFor" />
 
             </LinearLayout>
@@ -787,7 +787,7 @@
                     android:id="@+id/tvEntradaVIP"
                     android:layout_width="160dp"
                     android:layout_height="match_parent"
-                    android:text="@string/textoTVEntradaVIP"
+                    android:text="@string/texto_tv_entrada_vip"
                     android:textSize="18sp"
                     android:textStyle="normal"
                     android:background="@drawable/borde"
@@ -799,7 +799,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/filler$"
+                    android:text="@string/filler_dinero"
                     android:textSize="18sp"
                     android:textStyle="normal"
                     android:paddingStart="15dp"
@@ -815,7 +815,7 @@
                     android:inputType="numberDecimal"
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp"
-                    android:text="@string/ValorDefaultPrecioVIP"
+                    android:text="@string/valor_default_precio_vip"
                     tools:ignore="LabelFor" />
 
             </LinearLayout>
@@ -832,7 +832,7 @@
                 android:id="@+id/tvAdvertencia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/textoTVAdvertencia"
+                android:text="@string/texto_tv_advertencia"
                 android:textSize="18sp"
                 android:textStyle="normal"
                 android:layout_marginStart="15dp"

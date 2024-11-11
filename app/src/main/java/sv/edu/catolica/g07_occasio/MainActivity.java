@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ingresar(View view) {
-        String IP="192.168.205.212";
+        String IP="192.168.1.8";
         user = usuario.getText().toString();
         pasw = clave.getText().toString();
         AsyncHttpClient client = new AsyncHttpClient();

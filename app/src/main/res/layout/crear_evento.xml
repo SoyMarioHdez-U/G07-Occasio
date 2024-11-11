@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="195dp"
             android:layout_gravity="center"
-            android:contentDescription="@string/texto_IVBannerEvento"
+            android:contentDescription="@string/texto_iv_banner_evento"
             android:padding="50dp"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/icono_imagen" />
@@ -31,7 +31,7 @@
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="20dp"
             android:gravity="center"
-            android:text="@string/textoTVSubirPortada"
+            android:text="@string/texto_tv_subir_portada"
             android:textSize="20sp"
             android:textStyle="bold" />
     </FrameLayout>
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
-        android:text="@string/textoTVDatosEvento"
+        android:text="@string/texto_tv_datos_evento"
         android:textSize="20sp"
         android:textStyle="bold" />
     <View
@@ -61,7 +61,7 @@
         android:layout_marginEnd="15dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint="@string/textoETNombreEvento"
+        android:hint="@string/texto_et_nombre_evento"
         android:importantForAutofill="no"
         android:inputType="text"
         android:paddingStart="5dp"
@@ -76,7 +76,7 @@
         android:layout_marginEnd="15dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint="@string/textoETLugarEvento"
+        android:hint="@string/texto_et_lugar_evento"
         android:importantForAutofill="no"
         android:inputType="text"
         android:paddingStart="5dp"
@@ -91,7 +91,7 @@
         android:layout_marginEnd="15dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint="@string/textoETDireccionEvento"
+        android:hint="@string/texto_et_direccion_evento"
         android:importantForAutofill="no"
         android:inputType="text"
         android:paddingStart="5dp"
@@ -117,7 +117,7 @@
                 android:id="@+id/tvFecha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/textoTVFechaEvento"
+                android:text="@string/texto_tv_fecha_evento"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -130,7 +130,7 @@
                 android:background="@color/white"
                 android:ems="10"
                 android:gravity="center"
-                android:hint="@string/textoETFechaEvento"
+                android:hint="@string/texto_et_fecha_evento"
                 android:importantForAutofill="no"
                 android:inputType="date" />
 
@@ -146,7 +146,7 @@
                 android:id="@+id/tvHora"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/textoTVHoraEvento"
+                android:text="@string/texto_tv_hora_evento"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -158,7 +158,7 @@
                 android:background="@color/white"
                 android:ems="10"
                 android:gravity="center"
-                android:hint="@string/textoETHoraEvento"
+                android:hint="@string/texto_et_hora_evento"
                 android:importantForAutofill="no"
                 android:inputType="time" />
 
@@ -178,7 +178,7 @@
             android:id="@+id/tvCategoria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/textoTVCategoriaEvento"
+            android:text="@string/texto_tv_categoria_evento"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -200,7 +200,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="5dp"
-        android:text="@string/textoTVDescripcionEvento"
+        android:text="@string/texto_tv_descripcion_evento"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -215,7 +215,7 @@
         android:background="@color/white"
         android:ems="10"
         android:gravity="start|top"
-        android:hint="@string/textoETDescripcionEvento"
+        android:hint="@string/texto_et_descripcion_evento"
         android:importantForAutofill="no"
         android:inputType="textMultiLine"
         android:paddingStart="5dp"
@@ -229,5 +229,5 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="5dp"
-        android:text="@string/btnContinuar" />
+        android:text="@string/btn_continuar" />
 </LinearLayout>
