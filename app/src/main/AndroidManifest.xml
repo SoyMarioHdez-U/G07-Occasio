@@ -15,6 +15,9 @@
         android:theme="@style/Theme.G07Occasio"
         tools:targetApi="31">
         <activity
+            android:name=".Categorias"
+            android:exported="false" />
+        <activity
             android:name=".Registrarse"
             android:exported="false" />
         <activity

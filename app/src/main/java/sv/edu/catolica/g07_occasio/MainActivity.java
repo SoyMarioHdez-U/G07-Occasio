@@ -61,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
                         JSONObject json = new JSONObject(respuesta);
                         if(json.names().get(0).equals("exito")){
                             resultado = json.getString("usuario");
+                            Intent categorias = new Intent(MainActivity.this, Categorias.class);
+                            startActivity(categorias);
+                            finish();
+
                         }
                         else{
                             resultado = json.getString("error");
