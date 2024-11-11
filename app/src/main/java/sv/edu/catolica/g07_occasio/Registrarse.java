@@ -3,6 +3,8 @@ package sv.edu.catolica.g07_occasio;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -28,7 +30,7 @@ public class Registrarse extends AppCompatActivity {
 
     private EditText etNombre, etApellido, etEmail, etPassword, etFechaNac;
     public String nombre, apellido, fecha_nac, email, pasw, url, resultado;
-    public int rol = 2;
+    boolean DobleToqueParaSalir = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +97,7 @@ public class Registrarse extends AppCompatActivity {
                         }
                         Toast.makeText(Registrarse.this, resultado, Toast.LENGTH_SHORT).show();
                     } catch (Exception e) {
-                        Toast.makeText(Registrarse.this, "Algo falló", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Registrarse.this, "Correo electrónico ya utilizado", Toast.LENGTH_SHORT).show();
                         e.printStackTrace();
                     }
 
@@ -134,6 +136,25 @@ public class Registrarse extends AppCompatActivity {
         Intent login = new Intent(Registrarse.this, MainActivity.class);
         startActivity(login);
         finish();
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(DobleToqueParaSalir){
+            super.onBackPressed();
+            return;
+        }
+
+        this.DobleToqueParaSalir = true;
+        Toast.makeText(this, "Presione de nuevo para salir", Toast.LENGTH_SHORT).show();
+
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                DobleToqueParaSalir = false;
+            }
+        }, 2000);
 
     }
 }

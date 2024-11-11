@@ -2,6 +2,8 @@ package sv.edu.catolica.g07_occasio;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -26,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText usuario;
     private EditText clave;
     public String user, pasw, url, resultado;
+    boolean DobleToqueParaSalir = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                         } else {
                             resultado = json.getString("error");
                         }
-                        Toast.makeText(MainActivity.this, resultado, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Bienvenido, " + resultado, Toast.LENGTH_SHORT).show();
                     } catch (Exception e) {
                         e.printStackTrace();
                         Toast.makeText(MainActivity.this, "Algo falló", Toast.LENGTH_SHORT).show();
@@ -91,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+
     public void AbrirRegistrarse(View view) {
         Intent login = new Intent(MainActivity.this, Registrarse.class);
         startActivity(login);
@@ -98,6 +104,22 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        if(DobleToqueParaSalir){
+            super.onBackPressed();
+            return;
+        }
 
+        this.DobleToqueParaSalir = true;
+        Toast.makeText(this, "Presione de nuevo para salir", Toast.LENGTH_SHORT).show();
 
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                DobleToqueParaSalir = false;
+            }
+        }, 2000);
+
+    }
 }

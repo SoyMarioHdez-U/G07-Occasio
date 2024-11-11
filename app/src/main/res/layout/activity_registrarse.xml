@@ -91,7 +91,7 @@
 
     <EditText
         android:id="@+id/et_fecha_nac"
-        android:text="juan.perez@catolica.edu.sv"
+        android:text="2001-1-4"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:background="@drawable/redondeado"
@@ -112,7 +112,7 @@
 
     <EditText
         android:id="@+id/et_email"
-        android:text="2001-1-4"
+        android:text="juanperez@gmail.com"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:background="@drawable/redondeado"
