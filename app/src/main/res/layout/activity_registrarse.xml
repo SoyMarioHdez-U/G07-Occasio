@@ -12,19 +12,20 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="172dp"
-        android:layout_height="169dp"
+        android:layout_width="105dp"
+        android:layout_height="116dp"
         app:srcCompat="@drawable/occasio" />
 
     <TextView
         android:id="@+id/TvBienvenida"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="282dp"
+        android:layout_height="33dp"
         android:fontFamily="sans-serif-light"
         android:text="¿Listo para divertirte?"
         android:textColor="#FFFFFF"
-        android:textSize="30dp"
-        android:textStyle="bold" />
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
 
     <TextView
         android:id="@+id/msj_bienvenida"
@@ -37,16 +38,81 @@
         android:textSize="16dp" />
 
     <TextView
-        android:id="@+id/tv_usuario"
+        android:id="@+id/tv_nombre"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:paddingTop="20dp"
+        android:text="Nombre:"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/et_nombre"
+        android:text="Juan"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:background="@drawable/redondeado"
+        android:ems="10"
+        android:hint="Juan"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/material_dynamic_neutral30" />
+
+    <TextView
+        android:id="@+id/tv_Apellido"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:paddingTop="10dp"
+        android:text="Apellido:"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/et_apellido"
+        android:text="Pérez"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:background="@drawable/redondeado"
+        android:ems="10"
+        android:hint="Pérez"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/material_dynamic_neutral30" />
+
+    <TextView
+        android:id="@+id/tv_fecha_nac"
+
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:paddingTop="10dp"
+        android:text="Fecha de nacimiento:"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/et_fecha_nac"
+        android:text="juan.perez@catolica.edu.sv"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:background="@drawable/redondeado"
+        android:ems="10"
+        android:hint="AAAA-MM-DD"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHint="@color/material_dynamic_neutral30" />
+
+    <TextView
+        android:id="@+id/tv_usuario"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:paddingTop="10dp"
         android:text="Correo electrónico:"
         android:textColor="@color/white" />
 
     <EditText
-        android:id="@+id/et_usuario"
+        android:id="@+id/et_email"
+        android:text="2001-1-4"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:background="@drawable/redondeado"
@@ -58,6 +124,7 @@
 
     <TextView
         android:id="@+id/tv_password"
+
         android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
@@ -67,6 +134,7 @@
 
     <EditText
         android:id="@+id/et_password"
+        android:text="occasio"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:background="@drawable/redondeado"
@@ -76,20 +144,23 @@
         android:textColor="@color/black"
         android:textColorHint="@color/material_dynamic_neutral30" />
 
+
+
     <Button
-        android:id="@+id/btnEntrar"
+        android:id="@+id/btnRegistrarse"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:backgroundTint="@color/botones"
         android:padding="10dp"
-        android:text="ENTRAR"
+        android:text="REGISTRARSE"
         android:textColor="@color/white"
-        app:iconPadding="40dp" />
+        app:iconPadding="40dp"
+        android:onClick="registrarUsuario"/>
 
     <LinearLayout
         android:layout_width="240dp"
-        android:layout_height="88dp"
+        android:layout_height="38dp"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 

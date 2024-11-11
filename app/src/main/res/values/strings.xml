@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MH-Prueba2-Proyecto</string>
+    <string name="app_name">Occasio</string>
     <string name="texto_iv_banner_evento">Subir portada del evento:</string>
     <string name="texto_tv_subir_portada">Subir portada del evento</string>
     <string name="texto_tv_datos_evento">DATOS DEL EVENTO:</string>
