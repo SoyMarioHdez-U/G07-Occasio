@@ -28,7 +28,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="195dp"
                     android:layout_gravity="center"
-                    android:padding="50dp"
+                    android:padding="10dp"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/icono_imagen" />
 

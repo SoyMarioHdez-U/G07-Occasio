@@ -29,15 +29,7 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".CrearEvento2"
-            android:exported="false"/>
-
-        <activity
-            android:name=".CrearEvento3"
-            android:exported="false"/>
-
-        <activity
+                <activity
             android:name=".EditarEvento"
             android:exported="false"/>
 
