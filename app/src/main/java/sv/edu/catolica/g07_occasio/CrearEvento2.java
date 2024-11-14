@@ -8,7 +8,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import Clases.eventos;
+
 public class CrearEvento2 extends AppCompatActivity {
+
+    eventos evento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

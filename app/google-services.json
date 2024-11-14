@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "353447821504",
+    "project_id": "storagefiles-6f67f",
+    "storage_bucket": "storagefiles-6f67f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353447821504:android:63661acac47624b0efed25",
+        "android_client_info": {
+          "package_name": "sv.edu.catolica.g07_occasio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCM2od43Hh6O8UcE3HFUaYj1rMgRERAd_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
