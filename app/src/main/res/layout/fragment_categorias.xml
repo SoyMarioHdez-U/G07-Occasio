@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ui.categorias.CategoriasFragment">
+
+    <TextView
+        android:id="@+id/text_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/ib_deportes"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
+                android:contentDescription="Botón Deportes"
+                app:srcCompat="@drawable/cate_deportes"
+                android:onClick="CategoriaSeleccionada"/>
+            <ImageButton
+                android:id="@+id/ib_musica"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="Botón música"
+                app:srcCompat="@drawable/cate_musica"
+                android:onClick="CategoriaSeleccionada"/>
+            <ImageButton
+                android:id="@+id/ib_cultura"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="Botón cultura"
+                app:srcCompat="@drawable/cate_cultura"
+                android:onClick="CategoriaSeleccionada"/>
+
+            <ImageButton
+                android:id="@+id/ib_religion"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="Botón religion"
+                app:srcCompat="@drawable/cate_religioso"
+                android:onClick="CategoriaSeleccionada"/>
+
+            <ImageButton
+                android:id="@+id/ib_gastronomia"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="Botón gastronomia"
+                app:srcCompat="@drawable/cate_gastronomia"
+                android:onClick="CategoriaSeleccionada"/>
+
+            <ImageButton
+                android:id="@+id/ib_infantil"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="Botón infantil"
+                app:srcCompat="@drawable/cate_infantil"
+                android:onClick="CategoriaSeleccionada"/>
+
+            <ImageButton
+                android:id="@+id/ib_salud"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="Botón salud"
+                app:srcCompat="@drawable/cate_saludbienestar"
+                android:onClick="CategoriaSeleccionada"/>
+
+            <ImageButton
+                android:id="@+id/ib_tecnologia"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="Botón tecnología"
+                app:srcCompat="@drawable/cate_tecnologia"
+                android:onClick="CategoriaSeleccionada"/>
+
+            <ImageButton
+                android:id="@+id/ib_otros"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="Botón otros"
+                app:srcCompat="@drawable/cate_otros"
+                android:onClick="CategoriaSeleccionada"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

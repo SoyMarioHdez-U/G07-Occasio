@@ -1,4 +1,4 @@
-package sv.edu.catolica.g07_occasio;
+package sv.edu.catolica.g07_occasio.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,6 +22,9 @@ import com.loopj.android.http.RequestParams;
 import org.json.JSONObject;
 
 import cz.msebera.android.httpclient.Header;
+import sv.edu.catolica.g07_occasio.Categorias;
+import sv.edu.catolica.g07_occasio.R;
+import sv.edu.catolica.g07_occasio.Registrarse;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         usuario = findViewById(R.id.et_email);
         clave = findViewById(R.id.et_password);
@@ -68,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                         JSONObject json = new JSONObject(respuesta);
                         if (json.names().get(0).equals("exito")) {
                             resultado = json.getString("usuario");
-                            Intent categorias = new Intent(MainActivity.this, Categorias.class);
+                            Intent categorias = new Intent(MainActivity.this, InicioActivity.class);
                             startActivity(categorias);
                             finish();
 
