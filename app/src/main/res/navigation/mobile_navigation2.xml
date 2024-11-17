@@ -22,4 +22,28 @@
         android:name="sv.edu.catolica.g07_occasio.activity.ui.crear_evento.CrearEventoFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_crear_evento" />
+
+    <fragment
+        android:id="@+id/nav_mis_eventos"
+        android:name="sv.edu.catolica.g07_occasio.activity.ui.mis_eventos.MisEventosFragment"
+        android:label="Mis Eventos"
+        tools:layout="@layout/fragment_mis_eventos" />
+
+    <fragment
+        android:id="@+id/nav_eventos_asistir"
+        android:name="sv.edu.catolica.g07_occasio.activity.ui.eventos_asistir.EventosAsistirFragment"
+        android:label="Eventos a los que asistiré"
+        tools:layout="@layout/fragment_eventos_asistir" />
+
+    <fragment
+        android:id="@+id/nav_eventos_pasados"
+        android:name="sv.edu.catolica.g07_occasio.activity.ui.eventos_pasados.EventosPasadosFragment"
+        android:label="Eventos pasados"
+        tools:layout="@layout/fragment_eventos_pasados" />
+
+    <fragment
+        android:id="@+id/nav_notificaciones"
+        android:name="sv.edu.catolica.g07_occasio.activity.ui.notificaciones.NotificacionesFragment"
+        android:label="Notificaciones"
+        tools:layout="@layout/fragment_notificaciones" />
 </navigation>
