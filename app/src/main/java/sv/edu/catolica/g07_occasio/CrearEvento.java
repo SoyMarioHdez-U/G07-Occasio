@@ -8,10 +8,13 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.MediaController;
+import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -25,14 +28,19 @@ import Clases.eventos;
 
 public class CrearEvento extends AppCompatActivity {
 
-    eventos evento;
     ImageView portada;
 
-    EditText nombreEvento, lugarEvento, direccionEvento, fechaEvento, horaEvento, descripcionEvento;
+    EditText nombreEvento, lugarEvento, direccionEvento, fechaEvento, horaEvento, descripcionEvento, aforoMin, aforoMax, edadMin,edadMax, meses, dias, horas, minutos;
 
     Spinner categoriaEvento;
 
     TextView texto;
+
+    RadioButton reservarAdmisionSi, reservarAdmisionNo;
+
+    CheckBox edadminima, edadmaxima, aforominimo, aforomaximo;
+
+    Switch Cancelarevento, galeriaevento, eventogratis;
 
     private static int TAKE_PICTURE = 500, SELECT_PICTURE = 600;
 
@@ -48,8 +56,6 @@ public class CrearEvento extends AppCompatActivity {
             return insets;
         });
 
-        evento = new eventos();
-
         portada = findViewById(R.id.bannerEvento);
 
         nombreEvento = findViewById(R.id.etNombreEvento);
@@ -57,10 +63,31 @@ public class CrearEvento extends AppCompatActivity {
         direccionEvento = findViewById(R.id.etDireccionEvento);
         fechaEvento = findViewById(R.id.etFecha);
         horaEvento = findViewById(R.id.etHora);
+        aforoMin = findViewById(R.id.etAforoMinimo);
+        aforoMax = findViewById(R.id.etAforoMaximo);
+        edadMin = findViewById(R.id.etMinima);
+        edadMax = findViewById(R.id.etMaxima);
+        meses = findViewById(R.id.etMeses);
+        dias = findViewById(R.id.etDias);
+        horas = findViewById(R.id.etHoras);
+        minutos = findViewById(R.id.etMinutos);
+        descripcionEvento = findViewById(R.id.etDescripcion);
+
+        reservarAdmisionSi = findViewById(R.id.rbSi);
+        reservarAdmisionNo = findViewById(R.id.rbNo);
 
         categoriaEvento = findViewById(R.id.spCategoria);
+
         texto = findViewById(R.id.tvSubirPortada);
-        descripcionEvento = findViewById(R.id.etDescripcion);
+
+        edadminima = findViewById(R.id.ckbMinima);
+        edadmaxima = findViewById(R.id.ckbMaxima);
+        aforominimo = findViewById(R.id.ckbAforoMinimo);
+        aforomaximo = findViewById(R.id.ckbAforoMaximo);
+
+        Cancelarevento = findViewById(R.id.swCancelarSiNoCumpleAforo);
+        galeriaevento = findViewById(R.id.swGaleria);
+        eventogratis = findViewById(R.id.swEventoGratis);
     }
 
 
@@ -122,5 +149,18 @@ public class CrearEvento extends AppCompatActivity {
         }
 
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+
+    public void crearEvento(View view)
+    {
+        eventos evento = new eventos();
+
+        evento.setNombreEvento(nombreEvento.getText().toString());
+        evento.setLugar(lugarEvento.getText().toString());
+        evento.setDireccion(direccionEvento.getText().toString());
+        evento.setFechaEvento(fechaEvento.getText().toString());
+        evento.setHoraEvento(horaEvento.getText().toString());
+        //evento.set
     }
 }
