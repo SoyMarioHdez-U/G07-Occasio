@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -24,25 +25,38 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+import Clases.categorias;
 import Clases.eventos;
+import cz.msebera.android.httpclient.Header;
 
 public class CrearEvento extends AppCompatActivity {
 
     ImageView portada;
 
-    EditText nombreEvento, lugarEvento, direccionEvento, fechaEvento, horaEvento, descripcionEvento, aforoMin, aforoMax, edadMin,edadMax, meses, dias, horas, minutos;
+    EditText nombreEvento, lugarEvento, direccionEvento, fechaEvento, horaEvento, descripcionEvento, aforoMin, aforoMax;
 
     Spinner categoriaEvento;
 
     TextView texto;
 
-    RadioButton reservarAdmisionSi, reservarAdmisionNo;
+    CheckBox aforominimo, aforomaximo;
 
-    CheckBox edadminima, edadmaxima, aforominimo, aforomaximo;
-
-    Switch Cancelarevento, galeriaevento, eventogratis;
+    Switch asistenciaAprobada, restriccionEdad, eventogratis;
 
     private static int TAKE_PICTURE = 500, SELECT_PICTURE = 600;
+
+    String url;
+
+    ArrayList<categorias> categorias;
 
 
     @Override
@@ -56,6 +70,8 @@ public class CrearEvento extends AppCompatActivity {
             return insets;
         });
 
+        categorias  = new ArrayList<>();
+
         portada = findViewById(R.id.bannerEvento);
 
         nombreEvento = findViewById(R.id.etNombreEvento);
@@ -65,29 +81,20 @@ public class CrearEvento extends AppCompatActivity {
         horaEvento = findViewById(R.id.etHora);
         aforoMin = findViewById(R.id.etAforoMinimo);
         aforoMax = findViewById(R.id.etAforoMaximo);
-        edadMin = findViewById(R.id.etMinima);
-        edadMax = findViewById(R.id.etMaxima);
-        meses = findViewById(R.id.etMeses);
-        dias = findViewById(R.id.etDias);
-        horas = findViewById(R.id.etHoras);
-        minutos = findViewById(R.id.etMinutos);
         descripcionEvento = findViewById(R.id.etDescripcion);
-
-        reservarAdmisionSi = findViewById(R.id.rbSi);
-        reservarAdmisionNo = findViewById(R.id.rbNo);
 
         categoriaEvento = findViewById(R.id.spCategoria);
 
         texto = findViewById(R.id.tvSubirPortada);
 
-        edadminima = findViewById(R.id.ckbMinima);
-        edadmaxima = findViewById(R.id.ckbMaxima);
         aforominimo = findViewById(R.id.ckbAforoMinimo);
         aforomaximo = findViewById(R.id.ckbAforoMaximo);
 
-        Cancelarevento = findViewById(R.id.swCancelarSiNoCumpleAforo);
-        galeriaevento = findViewById(R.id.swGaleria);
+        asistenciaAprobada = findViewById(R.id.swAceptarSolicitudManualmente);
+        restriccionEdad = findViewById(R.id.swpregunta);
         eventogratis = findViewById(R.id.swEventoGratis);
+
+        cargarcat();
     }
 
 
@@ -156,11 +163,51 @@ public class CrearEvento extends AppCompatActivity {
     {
         eventos evento = new eventos();
 
-        evento.setNombreEvento(nombreEvento.getText().toString());
-        evento.setLugar(lugarEvento.getText().toString());
-        evento.setDireccion(direccionEvento.getText().toString());
-        evento.setFechaEvento(fechaEvento.getText().toString());
-        evento.setHoraEvento(horaEvento.getText().toString());
-        //evento.set
+
+    }
+
+    public void cargarcat()
+    {
+        String IP = "192.168.1.85"; //se cambia por la ip de la máquina en la que está el servidor(hecho en casa)
+        url = "http://"+IP+"/leercategorias.php";
+
+
+
+        AsyncHttpClient client = new AsyncHttpClient();
+
+        client.get(url, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+
+                try {
+                    String respuesta = new String(responseBody);
+                    JSONArray jsonArray = new JSONArray(respuesta);
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+                        int id = jsonObject.getInt("id_categoria");
+                        String nombre = jsonObject.getString("nombre_categoria");
+
+                        // Crear objeto y agregarlo a la lista
+                        categorias.add(new categorias(id, nombre));
+                    }
+
+                    // Configurar el adaptador del Spinner
+                    ArrayAdapter<categorias> adaptador = new ArrayAdapter<>(
+                            CrearEvento.this,
+                            android.R.layout.simple_spinner_item,
+                            categorias
+                    );
+                    adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    categoriaEvento.setAdapter(adaptador);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
     }
 }

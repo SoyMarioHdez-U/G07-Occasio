@@ -14,7 +14,7 @@
     <string name="textotvdescripcionevento">Descripción del evento:</string>
     <string name="textoetdescripcionevento">Escriba la descripción de su evento</string>
     <string name="textotvadmisionevento">ADMISIÓN:</string>
-    <string name="textotvpregunta">¿Cualquier persona puede asistir?</string>
+    <string name="textotvpregunta">¿El evento es apto para menores de edad?</string>
     <string name="textosi">Si</string>
     <string name="textono">No</string>
     <string name="textotvrangoedad">Rango de edad:</string>

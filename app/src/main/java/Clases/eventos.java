@@ -3,70 +3,65 @@ package Clases;
 public class eventos {
     private int idEvento;
     private int idUsuario;
-    private String nombreEvento;
-    private String portadaUrl;
+    private String nombre_evento;
+    private String descripcion;
+    private String fecha_evento;  // Puedes usar Date si deseas manejar fechas con más precisión
+    private String hora_evento;
     private String lugar;
     private String direccion;
-    private String fechaEvento;  // Puedes usar Date si deseas manejar fechas con más precisión
-    private String horaEvento;
-    private int idCategoria;
-    private String descripcion;
-    private int edadMax;
-    private int edadMin;
-    private boolean aceptarManualmente;
-    private int aforoMax;
-    private int aforoMin;
-    private int tiempoCancelacion;
-    private boolean galeriaEvento;
     private String precios;
+    private int id_categoria;
+    private String asistencia_aprobada;
+    private int aforo_minimo;
+    private int aforo_maximo;
+    private String restriccion_edad;
+    private String url_imagen;
+    private String fecha_creacion;
 
-    public eventos(int idEvento, int idUsuario, String nombreEvento, String portadaUrl, String lugar, String direccion,
-                   String fechaEvento, String horaEvento, int idCategoria, String descripcion, int edadMax, int edadMin,
-                   boolean aceptarManualmente, int aforoMax, int aforoMin, int tiempoCancelacion, boolean galeriaEvento, String precios) {
+    public eventos(int idEvento, int idUsuario, String nombre_evento, String descripcion, String hora_evento, String fecha_evento,
+                   String lugar, String direccion, String precios, int id_categoria, String asistencia_aprobada, int aforo_minimo, int aforo_maximo,
+                   String restriccion_edad, String url_imagen, String fecha_creacion)
+    {
         this.idEvento = idEvento;
         this.idUsuario = idUsuario;
-        this.nombreEvento = nombreEvento;
-        this.portadaUrl = portadaUrl;
+        this.nombre_evento = nombre_evento;
+        this.descripcion = descripcion;
+        this.hora_evento = hora_evento;
+        this.fecha_evento = fecha_evento;
         this.lugar = lugar;
         this.direccion = direccion;
-        this.fechaEvento = fechaEvento;
-        this.horaEvento = horaEvento;
-        this.idCategoria = idCategoria;
-        this.descripcion = descripcion;
-        this.edadMax = edadMax;
-        this.edadMin = edadMin;
-        this.aceptarManualmente = aceptarManualmente;
-        this.aforoMax = aforoMax;
-        this.aforoMin = aforoMin;
-        this.tiempoCancelacion = tiempoCancelacion;
-        this.galeriaEvento = galeriaEvento;
         this.precios = precios;
+        this.id_categoria = id_categoria;
+        this.asistencia_aprobada = asistencia_aprobada;
+        this.aforo_minimo = aforo_minimo;
+        this.aforo_maximo = aforo_maximo;
+        this.restriccion_edad = restriccion_edad;
+        this.url_imagen = url_imagen;
+        this.fecha_creacion = fecha_creacion;
     }
 
-    public eventos(int idUsuario, String nombreEvento, String portadaUrl, String lugar, String direccion, String fechaEvento,
-                   String horaEvento, int idCategoria, String descripcion, int edadMax, int edadMin, boolean aceptarManualmente,
-                   int aforoMax, int aforoMin, int tiempoCancelacion, boolean galeriaEvento, String precios) {
+    public eventos(int idUsuario, String nombre_evento, String descripcion, String fecha_evento, String hora_evento, String lugar,
+                   String direccion, String precios, int id_categoria, String asistencia_aprobada, int aforo_minimo, int aforo_maximo,
+                   String restriccion_edad, String url_imagen, String fecha_creacion)
+    {
         this.idUsuario = idUsuario;
-        this.nombreEvento = nombreEvento;
-        this.portadaUrl = portadaUrl;
+        this.nombre_evento = nombre_evento;
+        this.descripcion = descripcion;
+        this.fecha_evento = fecha_evento;
+        this.hora_evento = hora_evento;
         this.lugar = lugar;
         this.direccion = direccion;
-        this.fechaEvento = fechaEvento;
-        this.horaEvento = horaEvento;
-        this.idCategoria = idCategoria;
-        this.descripcion = descripcion;
-        this.edadMax = edadMax;
-        this.edadMin = edadMin;
-        this.aceptarManualmente = aceptarManualmente;
-        this.aforoMax = aforoMax;
-        this.aforoMin = aforoMin;
-        this.tiempoCancelacion = tiempoCancelacion;
-        this.galeriaEvento = galeriaEvento;
         this.precios = precios;
+        this.id_categoria = id_categoria;
+        this.asistencia_aprobada = asistencia_aprobada;
+        this.aforo_minimo = aforo_minimo;
+        this.aforo_maximo = aforo_maximo;
+        this.restriccion_edad = restriccion_edad;
+        this.url_imagen = url_imagen;
+        this.fecha_creacion = fecha_creacion;
     }
 
-    public eventos() {
-    }
+    public eventos() { }
 
     public int getIdEvento() {
         return idEvento;
@@ -84,20 +79,36 @@ public class eventos {
         this.idUsuario = idUsuario;
     }
 
-    public String getNombreEvento() {
-        return nombreEvento;
+    public String getNombre_evento() {
+        return nombre_evento;
     }
 
-    public void setNombreEvento(String nombreEvento) {
-        this.nombreEvento = nombreEvento;
+    public void setNombre_evento(String nombre_evento) {
+        this.nombre_evento = nombre_evento;
     }
 
-    public String getPortadaUrl() {
-        return portadaUrl;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setPortadaUrl(String portadaUrl) {
-        this.portadaUrl = portadaUrl;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getFecha_evento() {
+        return fecha_evento;
+    }
+
+    public void setFecha_evento(String fecha_evento) {
+        this.fecha_evento = fecha_evento;
+    }
+
+    public String getHora_evento() {
+        return hora_evento;
+    }
+
+    public void setHora_evento(String hora_evento) {
+        this.hora_evento = hora_evento;
     }
 
     public String getLugar() {
@@ -116,99 +127,67 @@ public class eventos {
         this.direccion = direccion;
     }
 
-    public String getFechaEvento() {
-        return fechaEvento;
-    }
-
-    public void setFechaEvento(String fechaEvento) {
-        this.fechaEvento = fechaEvento;
-    }
-
-    public String getHoraEvento() {
-        return horaEvento;
-    }
-
-    public void setHoraEvento(String horaEvento) {
-        this.horaEvento = horaEvento;
-    }
-
-    public int getIdCategoria() {
-        return idCategoria;
-    }
-
-    public void setIdCategoria(int idCategoria) {
-        this.idCategoria = idCategoria;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public int getEdadMax() {
-        return edadMax;
-    }
-
-    public void setEdadMax(int edadMax) {
-        this.edadMax = edadMax;
-    }
-
-    public int getEdadMin() {
-        return edadMin;
-    }
-
-    public void setEdadMin(int edadMin) {
-        this.edadMin = edadMin;
-    }
-
-    public boolean isAceptarManualmente() {
-        return aceptarManualmente;
-    }
-
-    public void setAceptarManualmente(boolean aceptarManualmente) {
-        this.aceptarManualmente = aceptarManualmente;
-    }
-
-    public int getAforoMax() {
-        return aforoMax;
-    }
-
-    public void setAforoMax(int aforoMax) {
-        this.aforoMax = aforoMax;
-    }
-
-    public int getAforoMin() {
-        return aforoMin;
-    }
-
-    public void setAforoMin(int aforoMin) {
-        this.aforoMin = aforoMin;
-    }
-
-    public int getTiempoCancelacion() {
-        return tiempoCancelacion;
-    }
-
-    public void setTiempoCancelacion(int tiempoCancelacion) {
-        this.tiempoCancelacion = tiempoCancelacion;
-    }
-
-    public boolean isGaleriaEvento() {
-        return galeriaEvento;
-    }
-
-    public void setGaleriaEvento(boolean galeriaEvento) {
-        this.galeriaEvento = galeriaEvento;
-    }
-
     public String getPrecios() {
         return precios;
     }
 
     public void setPrecios(String precios) {
         this.precios = precios;
+    }
+
+    public int getId_categoria() {
+        return id_categoria;
+    }
+
+    public void setId_categoria(int id_categoria) {
+        this.id_categoria = id_categoria;
+    }
+
+    public String getAsistencia_aprobada() {
+        return asistencia_aprobada;
+    }
+
+    public void setAsistencia_aprobada(String asistencia_aprobada) {
+        this.asistencia_aprobada = asistencia_aprobada;
+    }
+
+    public int getAforo_minimo() {
+        return aforo_minimo;
+    }
+
+    public void setAforo_minimo(int aforo_minimo) {
+        this.aforo_minimo = aforo_minimo;
+    }
+
+    public int getAforo_maximo() {
+        return aforo_maximo;
+    }
+
+    public void setAforo_maximo(int aforo_maximo) {
+        this.aforo_maximo = aforo_maximo;
+    }
+
+    public String getRestriccion_edad() {
+        return restriccion_edad;
+    }
+
+    public void setRestriccion_edad(String restriccion_edad) {
+        this.restriccion_edad = restriccion_edad;
+    }
+
+    public String getUrl_imagen() {
+        return url_imagen;
+    }
+
+    public void setUrl_imagen(String url_imagen) {
+        this.url_imagen = url_imagen;
+    }
+
+    public String getFecha_creacion() {
+        return fecha_creacion;
+    }
+
+    public void setFecha_creacion(String fecha_creacion) {
+        this.fecha_creacion = fecha_creacion;
     }
 }

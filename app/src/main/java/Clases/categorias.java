@@ -30,4 +30,9 @@ public class categorias
     public void setNombre_categoria(String nombre_categoria) {
         this.nombre_categoria = nombre_categoria;
     }
+
+    @Override
+    public String toString() {
+        return nombre_categoria;
+    }
 }
