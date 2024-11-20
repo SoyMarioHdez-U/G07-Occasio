@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ingresar(View view) {
-        String IP = "192.168.1.8";
+        String IP = "192.168.5.179"; // Asegúrate de usar tu IP correcta
         user = usuario.getText().toString();
         pasw = clave.getText().toString();
 
@@ -69,22 +69,25 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         String respuesta = new String(responseBody);
                         JSONObject json = new JSONObject(respuesta);
+
                         if (json.names().get(0).equals("exito")) {
-                            resultado = json.getString("usuario");
+                            String nombre = json.getString("usuario");
+                            String correo = json.getString("email");
+
+                            // Pasar datos al InicioActivity
                             Intent categorias = new Intent(MainActivity.this, InicioActivity.class);
+                            categorias.putExtra("nombre", nombre);
+                            categorias.putExtra("email", correo);
                             startActivity(categorias);
                             finish();
-
                         } else {
                             resultado = json.getString("error");
+                            Toast.makeText(MainActivity.this, resultado, Toast.LENGTH_SHORT).show();
                         }
-                        Toast.makeText(MainActivity.this, "Bienvenido, " + resultado, Toast.LENGTH_SHORT).show();
                     } catch (Exception e) {
                         e.printStackTrace();
-                        Toast.makeText(MainActivity.this, "Algo falló", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Algo falló al procesar la respuesta", Toast.LENGTH_SHORT).show();
                     }
-
-
                 }
             }
 
@@ -93,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Valió verdura. No conecta", Toast.LENGTH_SHORT).show();
                 Log.e("ConexionError", "Código de error: " + statusCode);
                 Log.e("ConexionError", "Mensaje: " + error.getMessage());
-
             }
         });
     }

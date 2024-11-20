@@ -1,8 +1,10 @@
 package sv.edu.catolica.g07_occasio.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -21,6 +23,7 @@ public class InicioActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityInicioBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,21 @@ public class InicioActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_inicio);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        Intent intent = getIntent();
+        String nombre = intent.getStringExtra("nombre");
+        String email = intent.getStringExtra("email");
+
+        // Configurar el NavHeader
+        View headerView = navigationView.getHeaderView(0);
+        TextView navNombre = headerView.findViewById(R.id.nav_header_nombre);
+        TextView navEmail = headerView.findViewById(R.id.nav_header_email);
+
+        if (nombre != null && email != null) {
+            navNombre.setText(nombre);
+            navEmail.setText(email);
+        }
+
     }
 
     @Override
