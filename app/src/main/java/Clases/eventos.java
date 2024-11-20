@@ -1,6 +1,22 @@
 package Clases;
 
+import android.widget.Toast;
+
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
+import sv.edu.catolica.g07_occasio.CrearEvento;
+import sv.edu.catolica.g07_occasio.MainActivity;
+
 public class eventos {
+
+    String resultado;
+
+
     private int idEvento;
     private int idUsuario;
     private String nombre_evento;
@@ -190,4 +206,5 @@ public class eventos {
     public void setFecha_creacion(String fecha_creacion) {
         this.fecha_creacion = fecha_creacion;
     }
+
 }

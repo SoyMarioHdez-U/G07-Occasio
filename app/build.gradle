@@ -37,6 +37,7 @@ dependencies {
     implementation libs.constraintlayout
 
     implementation libs.firebase.storage
+    implementation platform(libs.firebase.bom)
 
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit

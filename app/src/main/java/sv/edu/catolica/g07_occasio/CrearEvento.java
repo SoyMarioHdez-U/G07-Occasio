@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -17,22 +18,38 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import Clases.categorias;
 import Clases.eventos;
@@ -42,7 +59,7 @@ public class CrearEvento extends AppCompatActivity {
 
     ImageView portada;
 
-    EditText nombreEvento, lugarEvento, direccionEvento, fechaEvento, horaEvento, descripcionEvento, aforoMin, aforoMax;
+    EditText nombreEvento, lugarEvento, direccionEvento, fechaEvento, horaEvento, descripcionEvento, aforoMin, aforoMax, precios;
 
     Spinner categoriaEvento;
 
@@ -54,9 +71,18 @@ public class CrearEvento extends AppCompatActivity {
 
     private static int TAKE_PICTURE = 500, SELECT_PICTURE = 600;
 
-    String url;
+    String url, portadaurl, resultado;
+    ;
+
+    eventos evento;
 
     ArrayList<categorias> categorias;
+
+    private Uri selectedImageUri; // Para almacenar el Uri de la imagen seleccionada
+    private Bitmap capturedImageBitmap; // Para almacenar el Bitmap si tomaste una foto
+
+    String IP ; //se cambia por la ip de la máquina en la que está el servidor(hecho en casa)
+
 
 
     @Override
@@ -70,6 +96,10 @@ public class CrearEvento extends AppCompatActivity {
             return insets;
         });
 
+        evento = new eventos();
+
+        IP = "192.168.1.85";
+
         categorias  = new ArrayList<>();
 
         portada = findViewById(R.id.bannerEvento);
@@ -82,6 +112,7 @@ public class CrearEvento extends AppCompatActivity {
         aforoMin = findViewById(R.id.etAforoMinimo);
         aforoMax = findViewById(R.id.etAforoMaximo);
         descripcionEvento = findViewById(R.id.etDescripcion);
+        precios = findViewById(R.id.etPrecio);
 
         categoriaEvento = findViewById(R.id.spCategoria);
 
@@ -145,13 +176,14 @@ public class CrearEvento extends AppCompatActivity {
         if (requestCode == TAKE_PICTURE && resultCode == RESULT_OK)
         {
             Bitmap imgCapturada = (Bitmap) data.getExtras().get("data");
+            capturedImageBitmap = imgCapturada;
             portada.setImageBitmap(imgCapturada);
             texto.setText("");
         }
         else if (requestCode == SELECT_PICTURE && resultCode == RESULT_OK)
         {
-            Uri imgSeleccionada = data.getData();
-            portada.setImageURI(imgSeleccionada);
+            selectedImageUri = data.getData(); // Almacena el URI
+            portada.setImageURI(selectedImageUri);
             texto.setText("");
         }
 
@@ -161,14 +193,165 @@ public class CrearEvento extends AppCompatActivity {
 
     public void crearEvento(View view)
     {
-        eventos evento = new eventos();
+
+        int idUsu = 1;
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        String fechaCreacion = sdf.format(Calendar.getInstance().getTime());
+
+        if(nombreEvento.getText().length() ==0 || fechaEvento.getText().length() ==0  || horaEvento.getText().length() ==0 )
+        {
+            AlertDialog.Builder advertencia = new AlertDialog.Builder(this);
+
+            advertencia.setTitle("Empty fields");
+            advertencia.setMessage("Make sure you have filled out all the important fields like the name, date, and hour");
+            advertencia.show();
+        }
+        else
+        {
+            evento.setIdUsuario(idUsu);
+            evento.setNombre_evento(nombreEvento.getText().toString());
+            evento.setDescripcion(descripcionEvento.getText().toString());
+            evento.setFecha_evento(fechaEvento.getText().toString());
+            evento.setHora_evento(horaEvento.getText().toString());
+            evento.setLugar(lugarEvento.getText().toString());
+            evento.setDireccion(direccionEvento.getText().toString());
+            evento.setPrecios(precios.getText().toString());
+
+            for (categorias categoria : categorias) {
+                if (categoria.getNombre_categoria().equals(categoriaEvento.getSelectedItem().toString()))
+                {
+                    evento.setId_categoria(categoria.getId_categoria());
+                    break;
+                }
+            }
+
+            if(asistenciaAprobada.isChecked())
+            {
+                evento.setAsistencia_aprobada("aprobada");
+            }
+            else
+            {
+                evento.setAsistencia_aprobada("libre");
+            }
+
+            if(aforominimo.isChecked())
+            {
+                if(aforoMin.getText().equals("--") || aforoMin.getText().length() == 0)
+                {
+                    AlertDialog.Builder advertencia = new AlertDialog.Builder(this);
+
+                    advertencia.setTitle("Didn't specified a number");
+                    advertencia.setMessage("Make sure you have specified the minimum number of participants");
+                }
+                else
+                {
+                    evento.setAforo_minimo(Integer.parseInt(aforoMin.getText().toString()));
+                }
+            }
+            else
+            {
+                evento.setAforo_minimo(0);
+            }
+
+            if(aforomaximo.isChecked())
+            {
+                if(aforoMax.getText().equals("--") || aforoMax.getText().length() == 0)
+                {
+                    AlertDialog.Builder advertencia = new AlertDialog.Builder(this);
+
+                    advertencia.setTitle("Didn't specified a number");
+                    advertencia.setMessage("Make sure you have specified the maximum number of participants");
+                    advertencia.show();
+                }
+                else
+                {
+                    evento.setAforo_maximo(Integer.parseInt(aforoMax.getText().toString()));
+                }
+            }
+            else
+            {
+                evento.setAforo_maximo(0);
+            }
+
+            if(restriccionEdad.isChecked())
+            {
+                evento.setRestriccion_edad("todo_publico");
+            }
+            else
+            {
+                evento.setRestriccion_edad("mayores");
+            }
+
+            evento.setFecha_creacion(fechaCreacion);
+            subirImagenAFirebase();
+
+            if (portadaurl == null)
+            {
+                evento.setUrl_imagen("portadaurl");
+
+            }
+            else {
+                evento.setUrl_imagen(portadaurl);
+
+            }
 
 
+            String url = "http://"+IP+"/crearevento.php";
+            AsyncHttpClient client = new AsyncHttpClient();
+
+            RequestParams parametros = new RequestParams();
+
+            parametros.put("id_usuario", evento.getIdUsuario());
+            parametros.put("nombre_evento", evento.getNombre_evento());
+            parametros.put("descripcion", evento.getDescripcion());
+            parametros.put("fecha_evento", evento.getFecha_evento());
+            parametros.put("hora_evento", evento.getHora_evento());
+            parametros.put("lugar", evento.getLugar());
+            parametros.put("direccion", evento.getDireccion());
+            parametros.put("precios", evento.getPrecios());
+            parametros.put("id_categoria", evento.getId_categoria());
+            parametros.put("asistencia_aprobada", evento.getAsistencia_aprobada());
+            parametros.put("aforo_minimo", evento.getAforo_minimo());
+            parametros.put("aforo_maximo", evento.getAforo_maximo());
+            parametros.put("restriccion_edad",evento.getRestriccion_edad() );
+            parametros.put("url_imagen", evento.getUrl_imagen());
+            parametros.put("fecha_creacion", evento.getFecha_creacion());
+
+            client.post(url, parametros, new AsyncHttpResponseHandler() {
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                    if (statusCode==200){
+                        try {
+                            String respuesta = new String(responseBody);
+                            JSONObject json = new JSONObject(respuesta);
+                            if(json.names().get(0).equals("exito")){
+                                resultado = "The event was created succesfully";
+                            }
+                            else{
+                                resultado = "error";
+                            }
+                        }
+                        catch (Exception e){
+                            e.printStackTrace();
+                        }
+
+
+                    }
+                }
+
+                @Override
+                public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                    resultado = "fallamos";
+                }
+            });
+
+            Toast.makeText(this, resultado, Toast.LENGTH_LONG).show();
+        }
     }
 
     public void cargarcat()
     {
-        String IP = "192.168.1.85"; //se cambia por la ip de la máquina en la que está el servidor(hecho en casa)
         url = "http://"+IP+"/leercategorias.php";
 
 
@@ -210,4 +393,62 @@ public class CrearEvento extends AppCompatActivity {
             }
         });
     }
+
+
+    private void subirImagenAFirebase() {
+        Uri imageUri = selectedImageUri; // Si seleccionaste una imagen de la galería
+        if (imageUri == null && capturedImageBitmap != null) {
+            // Si no tienes un Uri, pero tienes un Bitmap (si usaste la cámara)
+            imageUri = saveBitmapToTempFile(capturedImageBitmap); // Guardar el Bitmap y obtener su Uri
+        }
+
+        if (imageUri != null) {
+            // Obtén la referencia de Firebase Storage
+            FirebaseStorage storage = FirebaseStorage.getInstance();
+            StorageReference storageReference = storage.getReference();
+
+            // Genera un nombre único para la imagen
+            String fileName = "images/" + System.currentTimeMillis() + ".jpg";
+            StorageReference fileReference = storageReference.child(fileName);
+
+            UploadTask uploadtask = fileReference.putFile(imageUri);
+
+            // Sube la imagen
+            uploadtask.addOnSuccessListener(taskSnapshot -> {
+                // Obtén la URL de descarga
+                fileReference.getDownloadUrl().addOnSuccessListener(uri -> {
+                    // La URL está aquí
+                    String downloadUrl = uri.toString();
+
+                    portadaurl = downloadUrl;
+                    Log.d("Firebase", "Download URL: " + downloadUrl);
+                });
+            });
+        }
+        else
+        {
+            portadaurl = "No hay imagen";
+        }
+    }
+
+    private Uri saveBitmapToTempFile(Bitmap bitmap) {
+        try {
+            // Crea un archivo temporal en el almacenamiento interno
+            File tempFile = File.createTempFile("captura_", ".jpg", getCacheDir());
+
+            // Guarda el Bitmap en el archivo
+            FileOutputStream out = new FileOutputStream(tempFile);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+            out.flush();
+            out.close();
+
+            // Devuelve el Uri del archivo
+            return Uri.fromFile(tempFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
 }
