@@ -76,7 +76,7 @@ public class DetalleEvento extends Fragment {
     }
 
     private void validarAsistencia() {
-        // Obtener id_usuario desde el SessionManager
+
         SessionManager sessionManager = new SessionManager(requireContext());
         String idUsuario = sessionManager.getIdUsuario();
 
@@ -85,13 +85,13 @@ public class DetalleEvento extends Fragment {
             return;
         }
 
-        // Configurar los parámetros de la solicitud
-        String url = "http://192.168.5.179/WebServicePHP/validarAsistencia.php"; // Cambia por tu IP y ruta
+
+        String url = "http://192.168.5.179/WebServicePHP/validarAsistencia.php";
         RequestParams params = new RequestParams();
         params.put("id_usuario", idUsuario);
         params.put("id_evento", idEvento);
 
-        // Enviar la solicitud
+
         AsyncHttpClient client = new AsyncHttpClient();
         client.post(url, params, new AsyncHttpResponseHandler() {
             @Override
@@ -101,11 +101,11 @@ public class DetalleEvento extends Fragment {
                     JSONObject json = new JSONObject(respuesta);
 
                     if (json.getString("asistencia").equals("existe")) {
-                        // Ocultar botón y mostrar mensaje
+
                         btnAccion.setVisibility(View.GONE);
                         Toast.makeText(getContext(), "Usted ya mandó una solicitud", Toast.LENGTH_SHORT).show();
                     } else {
-                        // Mostrar botón para registrar asistencia
+
                         btnAccion.setVisibility(View.VISIBLE);
                         btnAccion.setOnClickListener(v -> registrarAsistencia());
                     }
@@ -123,7 +123,7 @@ public class DetalleEvento extends Fragment {
     }
 
     private void registrarAsistencia() {
-        // Obtener id_usuario desde el SessionManager
+
         SessionManager sessionManager = new SessionManager(requireContext());
         String idUsuario = sessionManager.getIdUsuario();
 
@@ -132,14 +132,14 @@ public class DetalleEvento extends Fragment {
             return;
         }
 
-        // Configurar los parámetros de la solicitud
+
         String url = "http://192.168.5.179/WebServicePHP/registrarAsistencia.php"; // Cambia por tu IP y ruta
         RequestParams params = new RequestParams();
         params.put("id_usuario", idUsuario);
         params.put("id_evento", idEvento);
         params.put("estado", "pendiente");
 
-        // Enviar la solicitud
+
         AsyncHttpClient client = new AsyncHttpClient();
         client.post(url, params, new AsyncHttpResponseHandler() {
             @Override

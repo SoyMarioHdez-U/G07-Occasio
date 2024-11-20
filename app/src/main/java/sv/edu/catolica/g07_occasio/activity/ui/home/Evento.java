@@ -14,12 +14,13 @@ public class Evento {
     public int aforoMaximo;
     public String categoria;
     public String urlImagen;
-    public ArrayList<String> fotografias; // Lista de URLs de imágenes
+    public ArrayList<String> fotografias;
 
     public Evento(String idEvento, String nombreEvento, String organizador,
                   String fechaEvento, String horaEvento, String lugar,
                   String precios, int aforoMinimo, int aforoMaximo,
                   String categoria, String urlImagen, ArrayList<String> fotografias) {
+
         this.idEvento = idEvento;
         this.nombreEvento = nombreEvento;
         this.organizador = organizador;

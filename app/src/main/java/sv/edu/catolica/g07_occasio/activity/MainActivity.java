@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ingresar(View view) {
-        String IP = "192.168.5.179"; // Asegúrate de usar tu IP correcta
+        String IP = "192.168.5.179";
         user = usuario.getText().toString();
         pasw = clave.getText().toString();
 
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                             SessionManager sessionManager = new SessionManager(MainActivity.this);
                             sessionManager.createSession(idUsuario, nombre, correo);
 
-                            // Pasar datos al InicioActivity
+
                             Intent categorias = new Intent(MainActivity.this, InicioActivity.class);
                             categorias.putExtra("nombre", nombre);
                             categorias.putExtra("email", correo);

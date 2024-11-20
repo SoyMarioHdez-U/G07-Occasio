@@ -41,7 +41,7 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        recyclerView = binding.recyclerEventos; // Usa el ID del RecyclerView definido en FragmentHomeBinding
+        recyclerView = binding.recyclerEventos;
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         eventoList = new ArrayList<>();
@@ -51,7 +51,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void cargarEventos() {
-        String url = "http://192.168.5.179/WebServicePHP/obtenerEventos.php"; // Cambia por tu IP y endpoint
+        String url = "http://192.168.5.179/WebServicePHP/obtenerEventos.php";
         AsyncHttpClient client = new AsyncHttpClient();
 
         client.get(url, new AsyncHttpResponseHandler() {
@@ -66,7 +66,7 @@ public class HomeFragment extends Fragment {
 
                         ArrayList<String> fotos = new ArrayList<>();
                         try {
-                            // Obtener la lista de fotografías
+
                             JSONArray fotosArray = obj.getJSONArray("fotografias");
                             for (int o = 0; o < fotosArray.length(); o++) {
                                 fotos.add(fotosArray.getString(o));

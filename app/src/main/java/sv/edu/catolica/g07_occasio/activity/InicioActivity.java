@@ -66,7 +66,7 @@ public class InicioActivity extends AppCompatActivity {
 
 
 
-        // Configurar el NavHeader
+
         View headerView = navigationView.getHeaderView(0);
         TextView navNombre = headerView.findViewById(R.id.nav_header_nombre);
         TextView navEmail = headerView.findViewById(R.id.nav_header_email);

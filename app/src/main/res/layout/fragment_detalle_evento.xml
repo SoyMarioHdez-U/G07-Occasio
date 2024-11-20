@@ -16,14 +16,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Carrusel de imágenes -->
+
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/carruselImagenes"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginBottom="16dp" />
 
-            <!-- Aforo -->
+
             <TextView
                 android:id="@+id/aforo"
                 android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                 android:textSize="16sp"
                 android:layout_marginBottom="16dp" />
 
-            <!-- Categoría -->
+
             <TextView
                 android:id="@+id/categoriaEvento"
                 android:layout_width="wrap_content"
@@ -43,7 +43,7 @@
                 android:textSize="14sp"
                 android:layout_marginTop="8dp" />
 
-            <!-- Título del evento -->
+
             <TextView
                 android:id="@+id/tituloEvento"
                 android:layout_width="match_parent"
@@ -53,7 +53,7 @@
                 android:textStyle="bold"
                 android:layout_marginTop="8dp" />
 
-            <!-- Organizador -->
+
             <TextView
                 android:id="@+id/organizadorEvento"
                 android:layout_width="match_parent"
@@ -62,7 +62,7 @@
                 android:textSize="16sp"
                 android:layout_marginTop="8dp" />
 
-            <!-- Lugar -->
+
             <TextView
                 android:id="@+id/lugarEvento"
                 android:layout_width="match_parent"
@@ -71,7 +71,7 @@
                 android:textSize="16sp"
                 android:layout_marginTop="8dp" />
 
-            <!-- Fecha y Hora -->
+
             <TextView
                 android:id="@+id/fechaHoraEvento"
                 android:layout_width="match_parent"
@@ -80,7 +80,7 @@
                 android:textSize="16sp"
                 android:layout_marginTop="8dp" />
 
-            <!-- Precios -->
+
             <TextView
                 android:id="@+id/preciosEvento"
                 android:layout_width="match_parent"
