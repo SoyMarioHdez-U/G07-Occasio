@@ -17,6 +17,7 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -63,14 +64,30 @@ public class HomeFragment extends Fragment {
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject obj = jsonArray.getJSONObject(i);
 
+                        ArrayList<String> fotos = new ArrayList<>();
+                        try {
+                            // Obtener la lista de fotografías
+                            JSONArray fotosArray = obj.getJSONArray("fotografias");
+                            for (int o = 0; o < fotosArray.length(); o++) {
+                                fotos.add(fotosArray.getString(o));
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
                         Evento evento = new Evento(
                                 obj.getString("id_evento"),
                                 obj.getString("nombre_evento"),
                                 obj.getString("organizador"),
                                 obj.getString("fecha_evento"),
                                 obj.getString("hora_evento"),
+                                obj.getString("lugar"),
+                                obj.getString("precios"),
+                                obj.getInt("aforo_minimo"),
+                                obj.getInt("aforo_maximo"),
                                 obj.getString("categoria"),
-                                obj.getString("url_imagen")
+                                obj.getString("url_imagen"),
+                                fotos
                         );
                         eventoList.add(evento);
                     }

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ui.detalles.DetalleEvento">
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Carrusel de imágenes -->
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/carruselImagenes"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Aforo -->
+            <TextView
+                android:id="@+id/aforo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cupos disponibles: 0 / 0"
+                android:textSize="16sp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Categoría -->
+            <TextView
+                android:id="@+id/categoriaEvento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Categoría"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp" />
+
+            <!-- Título del evento -->
+            <TextView
+                android:id="@+id/tituloEvento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Título del evento"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+
+            <!-- Organizador -->
+            <TextView
+                android:id="@+id/organizadorEvento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Organiza: "
+                android:textSize="16sp"
+                android:layout_marginTop="8dp" />
+
+            <!-- Lugar -->
+            <TextView
+                android:id="@+id/lugarEvento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lugar: "
+                android:textSize="16sp"
+                android:layout_marginTop="8dp" />
+
+            <!-- Fecha y Hora -->
+            <TextView
+                android:id="@+id/fechaHoraEvento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fecha y Hora: "
+                android:textSize="16sp"
+                android:layout_marginTop="8dp" />
+
+            <!-- Precios -->
+            <TextView
+                android:id="@+id/preciosEvento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Precios: "
+                android:textSize="16sp"
+                android:layout_marginTop="8dp" />
+
+            <Button
+                android:id="@+id/btnAccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Asistir"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

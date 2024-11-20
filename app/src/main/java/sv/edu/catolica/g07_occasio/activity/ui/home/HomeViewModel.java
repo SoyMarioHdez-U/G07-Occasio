@@ -1,6 +1,7 @@
 package sv.edu.catolica.g07_occasio.activity.ui.home;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -53,6 +56,26 @@ public class HomeViewModel extends ViewModel {
                     .placeholder(R.drawable.placeholder) // Imagen de carga
                     .error(R.drawable.placeholder) // Imagen de error
                     .into(holder.icono);
+
+            holder.itemView.setOnClickListener(v -> {
+                Bundle args = new Bundle();
+                args.putString("id_evento", evento.idEvento);
+                args.putString("nombre_evento", evento.nombreEvento);
+                args.putString("organizador", evento.organizador);
+                args.putString("fecha_evento", evento.fechaEvento);
+                args.putString("hora_evento", evento.horaEvento);
+                args.putString("lugar", evento.lugar);
+                args.putString("precios", evento.precios);
+                args.putInt("aforo_minimo", evento.aforoMinimo);
+                args.putInt("aforo_maximo", evento.aforoMaximo);
+                args.putString("categoria", evento.categoria);
+                args.putStringArrayList("fotografias", evento.fotografias);
+
+                NavController navController = Navigation.findNavController(v);
+                navController.navigate(R.id.detalleEventoFragment, args);
+            });
+
+
         }
 
         @Override

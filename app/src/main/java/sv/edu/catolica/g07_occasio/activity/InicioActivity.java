@@ -2,6 +2,7 @@ package sv.edu.catolica.g07_occasio.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import sv.edu.catolica.g07_occasio.R;
 import sv.edu.catolica.g07_occasio.databinding.ActivityInicioBinding;
+import sv.edu.catolica.g07_occasio.sesion_actual.SessionManager;
 
 public class InicioActivity extends AppCompatActivity {
 
@@ -56,6 +58,13 @@ public class InicioActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String nombre = intent.getStringExtra("nombre");
         String email = intent.getStringExtra("email");
+        String idUsuario = intent.getStringExtra("id_usuario");
+
+
+        SessionManager sessionManager = new SessionManager(this);
+        sessionManager.createSession(idUsuario, nombre, email);
+
+
 
         // Configurar el NavHeader
         View headerView = navigationView.getHeaderView(0);

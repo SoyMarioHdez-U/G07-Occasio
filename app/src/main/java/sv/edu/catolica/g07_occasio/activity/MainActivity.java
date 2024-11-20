@@ -25,6 +25,7 @@ import cz.msebera.android.httpclient.Header;
 import sv.edu.catolica.g07_occasio.Categorias;
 import sv.edu.catolica.g07_occasio.R;
 import sv.edu.catolica.g07_occasio.Registrarse;
+import sv.edu.catolica.g07_occasio.sesion_actual.SessionManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -73,11 +74,16 @@ public class MainActivity extends AppCompatActivity {
                         if (json.names().get(0).equals("exito")) {
                             String nombre = json.getString("usuario");
                             String correo = json.getString("email");
+                            String idUsuario = json.getString("id_usuario");
+
+                            SessionManager sessionManager = new SessionManager(MainActivity.this);
+                            sessionManager.createSession(idUsuario, nombre, correo);
 
                             // Pasar datos al InicioActivity
                             Intent categorias = new Intent(MainActivity.this, InicioActivity.class);
                             categorias.putExtra("nombre", nombre);
                             categorias.putExtra("email", correo);
+                            categorias.putExtra("id_usuario", idUsuario);
                             startActivity(categorias);
                             finish();
                         } else {

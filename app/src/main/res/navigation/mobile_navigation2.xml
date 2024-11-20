@@ -46,4 +46,11 @@
         android:name="sv.edu.catolica.g07_occasio.activity.ui.notificaciones.NotificacionesFragment"
         android:label="Notificaciones"
         tools:layout="@layout/fragment_notificaciones" />
+
+    <fragment
+        android:id="@+id/detalleEventoFragment"
+        android:name="sv.edu.catolica.g07_occasio.activity.ui.detalles.DetalleEvento"
+        android:label="Detalle Evento Fragment"
+        tools:layout="@layout/fragment_detalle_evento" />
+
 </navigation>

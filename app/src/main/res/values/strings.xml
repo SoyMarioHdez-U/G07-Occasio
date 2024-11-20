@@ -61,5 +61,7 @@
     <string name="menu_home">Occasio</string>
     <string name="menu_categorias">Categorías</string>
     <string name="menu_slideshow">Crear evento</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
