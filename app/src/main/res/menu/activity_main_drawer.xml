@@ -7,34 +7,36 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home"
-            android:title="Inicio" />
+            android:title="@string/tx_menu_home" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_categories"
-            android:title="Categorías" />
+            android:title="@string/tx_menu_categories" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_create"
-            android:title="Crear Evento" />
+            android:title="@string/tx_menu_newEvents" />
         <item
             android:id="@+id/nav_mis_eventos"
             android:icon="@drawable/ic_my_events"
-            android:title="Mis eventos" />
+            android:title="@string/tx_menu_new_events" />
         <item
             android:id="@+id/nav_eventos_asistir"
             android:icon="@drawable/ic_attending"
-            android:title="Eventos que asistiré" />
+            android:title="@string/tx_menu_myUpcomingEvents" />
         <item
             android:id="@+id/nav_eventos_pasados"
             android:icon="@drawable/ic_past"
-            android:title="Eventos pasados" />
+            android:title="@string/tx_menu_pastEvents" />
         <item
             android:id="@+id/nav_notificaciones"
             android:icon="@drawable/ic_notifications"
-            android:title="Notificaciones" />
+            android:title="@string/tx_menu_notifications" />
         <item
             android:id="@+id/nav_salir"
             android:icon="@drawable/ic_logout"
-            android:title="Salir" />
+            android:title="@string/tx_menu_logOut"
+
+            />
     </group>
 </menu>

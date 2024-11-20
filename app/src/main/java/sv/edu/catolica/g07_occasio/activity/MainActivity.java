@@ -1,9 +1,11 @@
 package sv.edu.catolica.g07_occasio.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -43,6 +45,17 @@ public class MainActivity extends AppCompatActivity {
         usuario = findViewById(R.id.et_email);
         clave = findViewById(R.id.et_password);
 
+//        //Shared Preferences
+//        SharedPreferences preferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
+//        String savedUser = preferences.getString("user", null);
+//        String savedPasw = preferences.getString("pasw", null);
+
+//        if (savedUser != null && savedPasw != null) {
+//            user = savedUser;
+//            pasw = savedPasw;
+//            ingresar(null);
+//        }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -71,6 +84,15 @@ public class MainActivity extends AppCompatActivity {
                         JSONObject json = new JSONObject(respuesta);
                         if (json.names().get(0).equals("exito")) {
                             resultado = json.getString("usuario");
+//                            //Intentando guardar la sesión
+
+                                SharedPreferences preferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
+                                SharedPreferences.Editor editor =  preferences.edit();
+                                editor.putString("user", user);
+                                editor.putString("pasw", pasw);
+
+
+
                             Intent categorias = new Intent(MainActivity.this, InicioActivity.class);
                             startActivity(categorias);
                             finish();
@@ -125,4 +147,8 @@ public class MainActivity extends AppCompatActivity {
         }, 2000);
 
     }
+
+
+
+
 }

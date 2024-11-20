@@ -17,13 +17,13 @@
         app:srcCompat="@drawable/occasio" />
 
     <TextView
-        android:id="@+id/TvBienvenida"
+        android:id="@+id/TvBienvenidaLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:text="¡Bienvenido!"
+        android:text="@string/tx_menu_welcome"
         android:textColor="#FFFFFF"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView
@@ -31,10 +31,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
-        android:text="Por favor, inicie sesión"
+        android:text="@string/txt_login_loginText"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="16dp" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/tv_usuario"
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:paddingTop="20dp"
-        android:text="Usuario o correo electrónico:"
+        android:text="@string/tx_menu_email"
         android:textColor="@color/white" />
 
     <EditText
@@ -51,10 +51,11 @@
         android:layout_height="50dp"
         android:background="@drawable/redondeado"
         android:ems="10"
-        android:hint="usuario@correo.com"
-        android:inputType="text"
+        android:hint="@string/tx_menu_hint_email"
+        android:inputType="textEmailAddress"
         android:textColor="@color/black"
-        android:textColorHint="@color/material_dynamic_neutral30" />
+        android:textColorHint="@color/material_dynamic_neutral30"
+        tools:ignore="Autofill" />
 
     <TextView
         android:id="@+id/tv_password"
@@ -62,7 +63,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:paddingTop="10dp"
-        android:text="Contraseña:"
+        android:text="@string/tx_menu_password"
         android:textColor="@color/white" />
 
     <EditText
@@ -71,7 +72,7 @@
         android:layout_height="50dp"
         android:background="@drawable/redondeado"
         android:ems="10"
-        android:hint="********"
+        android:hint="@string/tx_menu_hint_password"
         android:inputType="textPassword"
         android:textColor="@color/black"
         android:textColorHint="@color/material_dynamic_neutral30"/>
@@ -85,7 +86,7 @@
         android:layout_margin="20dp"
         android:backgroundTint="@color/botones"
         android:padding="10dp"
-        android:text="ENTRAR"
+        android:text="@string/btn_menu_login"
         android:textColor="@color/white"
         app:iconPadding="40dp"
         android:onClick="ingresar"/>
@@ -98,11 +99,11 @@
 
         <TextView
 
-            android:layout_width="20dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="sans-serif-medium"
-            android:text="¿No tienes cuenta?"
+            android:text="@string/tx_menu_dontHaveAccount"
             android:textColor="@color/white" />
 
         <TextView
@@ -112,7 +113,7 @@
             android:layout_weight="1"
             android:fontFamily="sans-serif-condensed-medium"
             android:onClick="AbrirRegistrarse"
-            android:text="Regístrate aquí"
+            android:text="@string/tx_menu_signup"
             android:textColor="@color/botones" />
     </LinearLayout>
 

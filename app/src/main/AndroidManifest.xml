@@ -17,14 +17,14 @@
         tools:targetApi="31">
         <activity
             android:name=".activity.InicioActivity"
-            android:exported="true"
+            android:exported="false"
             android:label="@string/title_activity_inicio"
             android:theme="@style/Theme.G07Occasio.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.inPatent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>>
         <activity
             android:name=".Categorias"
@@ -36,12 +36,12 @@
 
         <activity
             android:name=".activity.MainActivity"
-            android:exported="false">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
