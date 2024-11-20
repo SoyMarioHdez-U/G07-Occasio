@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="txt_register_signIn">Faça login aqui</string>
+    <string name="txt_register_haveYouAnAccount">Já tem uma conta?</string>
+    <string name="btn_registrarse_signUp">REGISTRAR-SE</string>
+    <string name="txt_register_password">Senha:</string>
+    <string name="tx_register_hint_date">AAAA-MM-DD</string>
+    <string name="tx_register_dateOfBirth">Data de nascimento</string>
+    <string name="tx_register_lastName">Sobrenome</string>
+    <string name="tx_register_name">Nome</string>
+    <string name="tx_register_enterDetails">Insira seus dados para se registrar</string>
+    <string name="tx_register_readyToHaveFun">Pronto para se divertir?</string>
+    <string name="tx_menu_signup">Registre-se aqui</string>
+    <string name="tx_menu_dontHaveAccount">Não tem uma conta?</string>
+    <string name="btn_menu_login">ENTRAR</string>
+    <string name="tx_menu_password">Senha</string>
+    <string name="tx_menu_hint_email">usuario@email.com</string>
+    <string name="tx_menu_email">E-mail</string>
+    <string name="tx_menu_welcome">Bem-vindo!</string>
+    <string name="txt_login_loginText">Por favor, faça login</string>
+    <string name="tx_menu_logOut">Sair</string>
+    <string name="tx_menu_notifications">Notificaçoes</string>
+    <string name="tx_menu_pastEvents">Eventos passados</string>
+    <string name="tx_menu_myUpcomingEvents">Meus próximos eventos</string>
+    <string name="tx_menu_new_events">Meus eventos</string>
+    <string name="tx_menu_newEvents">Novo evento</string>
+    <string name="tx_menu_categories">Categorias</string>
+    <string name="tx_menu_home">Início</string>
+    <string name="menu_slideshow">Criar evento</string>
+    <string name="menu_categorias">Categorias</string>
+    <string name="action_settings">Opções</string>
+    <string name="navigation_drawer_close">Fechar navigator drawer</string>
+    <string name="navigation_drawer_open">Abrir navigation drawer</string>
+    <string name="tx_cat_musica">Música</string>
+    <string name="tx_cat_religoso">Religioso</string>
+    <string name="tx_cat_deportes">Esportes</string>
+    <string name="tx_cat_cultura">Cultura</string>
+</resources>

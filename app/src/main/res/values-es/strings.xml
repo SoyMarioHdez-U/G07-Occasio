@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tx_cat_musica">Música</string>
+    <string name="tx_cat_religoso">Religioso</string>
+    <string name="tx_cat_deportes">Deportes</string>
+    <string name="tx_cat_cultura">Cultura</string>
+    <string name="navigation_drawer_open">Abrir navigation drawer</string>
+    <string name="navigation_drawer_close">Cerrar navigation drawer</string>
+    <string name="action_settings">Opciones</string>
+    <string name="menu_categorias">Categorías</string>
+    <string name="menu_slideshow">Crear evento</string>
+    <string name="tx_menu_home">Inicio</string>
+    <string name="tx_menu_categories">Categorías</string>
+    <string name="tx_menu_newEvents">Crear evento</string>
+    <string name="tx_menu_new_events">Mis eventos</string>
+    <string name="tx_menu_myUpcomingEvents">Mis próximos eventos</string>
+    <string name="tx_menu_pastEvents">Eventos pasados</string>
+    <string name="tx_menu_notifications">Notificaciones</string>
+    <string name="tx_menu_logOut">Salir</string>
+    <string name="txt_login_loginText">Por favor, inicie sesión</string>
+    <string name="tx_menu_welcome">¡Bienvenido!</string>
+    <string name="tx_menu_email">Correo electrónico:</string>
+    <string name="tx_menu_hint_email">usuario@correo.com</string>
+    <string name="tx_menu_password">Contraseña:</string>
+    <string name="btn_menu_login">INGRESAR</string>
+    <string name="tx_menu_dontHaveAccount">¿No tienes una cuenta?</string>
+    <string name="tx_menu_signup">Registrate aquí</string>
+    <string name="tx_register_readyToHaveFun">¿Listo para divertirte?</string>
+    <string name="tx_register_enterDetails">Ingresa tus datos para registrarte</string>
+    <string name="tx_register_name">Nombre:</string>
+    <string name="tx_register_lastName">Apellido:</string>
+    <string name="tx_register_dateOfBirth">Fecha de nacimiento:</string>
+    <string name="tx_register_hint_date">AAAA-MM-DD</string>
+    <string name="txt_register_password">Contraseña:</string>
+    <string name="btn_registrarse_signUp">REGISTRARSE</string>
+    <string name="txt_register_haveYouAnAccount">¿Ya tienes una cuenta?</string>
+    <string name="txt_register_signIn">Regístrate aquí</string>
+</resources>

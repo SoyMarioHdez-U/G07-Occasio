@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Occasio</string>
+    <string name="app_name" translatable="false">Occasio</string>
     <string name="texto_iv_banner_evento">Subir portada del evento:</string>
     <string name="texto_tv_subir_portada">Subir portada del evento</string>
     <string name="texto_tv_datos_evento">DATOS DEL EVENTO:</string>
@@ -46,20 +46,51 @@
     <string name="valor_default_precio_vip">12.00</string>
     <string name="texto_tv_advertencia">El manejo de los cobros es completa responsabilidad del organizador</string>
     <string name="texto_btn_crear_evento">Crear evento</string>
-    <string name="tx_cat_musica">MÚSICA</string>
-    <string name="tx_cat_religoso">RELIGIOSO</string>
-    <string name="tx_cat_deportes">DEPORTES</string>
-    <string name="tx_cat_cultura">CULTURA</string>
-    <string name="title_activity_inicio">InicioActivity</string>
+    <string name="tx_cat_musica">MUSIC</string>
+    <string name="tx_cat_religoso">RELIGIOUS</string>
+    <string name="tx_cat_deportes">SPORTS</string>
+    <string name="tx_cat_cultura">CULTURE</string>
+    <string name="title_activity_inicio" translatable="false">InicioActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Mario Hernández</string>
-    <string name="nav_header_subtitle">soymariohdez@gmail.com</string>
-    <string name="nav_header_desc">Navigation header</string>
+    <string name="nav_header_title" translatable="false">Mario Hernández</string>
+    <string name="nav_header_subtitle" translatable="false">soymariohdez@gmail.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Occasio</string>
-    <string name="menu_categorias">Categorías</string>
-    <string name="menu_slideshow">Crear evento</string>
+    <string name="menu_home" translatable="false">Occasio</string>
+    <string name="menu_categorias">Categories</string>
+    <string name="menu_slideshow">Create event</string>
+    <string name="tx_menu_home">Home</string>
+    <string name="tx_menu_categories">Categories</string>
+    <string name="tx_menu_newEvents">New event</string>
+    <string name="tx_menu_new_events">My events</string>
+    <string name="tx_menu_myUpcomingEvents">My upcoming events</string>
+    <string name="tx_menu_pastEvents">Past events</string>
+    <string name="tx_menu_notifications">Notifications</string>
+    <string name="tx_menu_logOut">Log out</string>
+    <string name="txt_login_loginText">Please sign in</string>
+    <string name="tx_menu_welcome">Welcome!</string>
+    <string name="tx_menu_email">Email:</string>
+    <string name="tx_menu_hint_email">user@email.com</string>
+    <string name="tx_menu_password">Password:</string>
+    <string name="tx_menu_hint_password" translatable="false">********</string>
+    <string name="btn_menu_login">SING IN</string>
+    <string name="tx_menu_dontHaveAccount">Don\'t have an account?</string>
+    <string name="tx_menu_signup">Sign up here!</string>
+    <string name="tx_register_readyToHaveFun">Ready to have fun?</string>
+    <string name="tx_register_enterDetails">Enter your details to sign up</string>
+    <string name="tx_register_name">First Name:</string>
+    <string name="tx_register_hint_firstName" translatable="false">Juan</string>
+    <string name="tx_register_lastName">Last Name:</string>
+    <string name="tx_register_hint_lastName" translatable="false">Pérez</string>
+    <string name="tx_register_dateOfBirth">Date of Birth:</string>
+    <string name="tx_register_hint_date">YYYY-MM-DD</string>
+    <string name="tx_register_hint_email" translatable="false">nombre@ejemplo.com</string>
+    <string name="txt_register_password">Password:</string>
+    <string name="txt_register_hint_password" translatable="false">********</string>
+    <string name="btn_registrarse_signUp">SIGN UP</string>
+    <string name="txt_register_haveYouAnAccount">Have you an account?</string>
+    <string name="txt_register_signIn">Sign in here</string>
 
 </resources>
