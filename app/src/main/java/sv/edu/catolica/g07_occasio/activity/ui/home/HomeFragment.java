@@ -51,7 +51,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void cargarEventos() {
-        String url = "http://192.168.107.179/WebServicePHP/obtenerEventos.php";
+        String url = "http://192.168.5.179/WebServicePHP/obtenerEventos.php";
         AsyncHttpClient client = new AsyncHttpClient();
 
         client.get(url, new AsyncHttpResponseHandler() {

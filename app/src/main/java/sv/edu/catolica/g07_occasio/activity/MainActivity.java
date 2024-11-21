@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ingresar(View view) {
-        String IP = "192.168.107.179";
+        String IP = "192.168.5.179";
         user = usuario.getText().toString();
         pasw = clave.getText().toString();
 

@@ -1,31 +1,20 @@
-package sv.edu.catolica.g07_occasio.activity.ui.mis_eventos;
+package sv.edu.catolica.g07_occasio.activity.ui.categorias;
 
-
-import android.content.Context;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -34,55 +23,46 @@ import java.util.List;
 import cz.msebera.android.httpclient.Header;
 import sv.edu.catolica.g07_occasio.R;
 import sv.edu.catolica.g07_occasio.activity.ui.clases.Evento;
-import sv.edu.catolica.g07_occasio.databinding.FragmentMisEventosBinding;
-import sv.edu.catolica.g07_occasio.sesion_actual.SessionManager;
+import sv.edu.catolica.g07_occasio.activity.ui.home.HomeViewModel;
 
+public class EventosPorCategoria extends Fragment {
 
-public class MisEventosFragment extends Fragment {
-
-    private FragmentMisEventosBinding binding;
     private RecyclerView recyclerView;
-    private MisEventosViewModel.MisEventosAdapter adapter;
-    private List<Evento> eventoList;
+    private HomeViewModel.EventoAdapter adapter;
+    private List<Evento> listaEventos;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        MisEventosViewModel misEventosViewModel =
-                new ViewModelProvider(this).get(MisEventosViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.fragment_eventos_por_categoria, container, false);
 
-        binding = FragmentMisEventosBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
-
-        recyclerView = binding.recyclerMisEventos;
+        recyclerView = root.findViewById(R.id.recyclerEventosPorCategoria);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        eventoList = new ArrayList<>();
-        cargarMisEventos();
+        listaEventos = new ArrayList<>();
+        adapter = new HomeViewModel.EventoAdapter(getContext(), listaEventos);
+        recyclerView.setAdapter(adapter);
+
+        // Cargar eventos de la categoría seleccionada
+        Bundle args = getArguments();
+        if (args != null) {
+            String idCategoria = args.getString("id_categoria");
+            cargarEventosPorCategoria(idCategoria);
+        }
 
         return root;
     }
 
-    private void cargarMisEventos() {
-        SessionManager sessionManager = new SessionManager(requireContext());
-        String idUsuario = sessionManager.getIdUsuario();
-
-        if (idUsuario == null || idUsuario.isEmpty()) {
-            Toast.makeText(getContext(), "Error: No se pudo obtener el usuario logueado", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        String url = "http://192.168.5.179/WebServicePHP/obtenerMisEventos.php";
+    private void cargarEventosPorCategoria(String idCategoria) {
+        String url = "http://192.168.5.179/WebServicePHP/obtenerEventosPorCategoria.php"; // Cambia a tu IP
         AsyncHttpClient client = new AsyncHttpClient();
-        RequestParams params = new RequestParams();
-        params.put("id_usuario", idUsuario);
-
-        client.get(url, params, new AsyncHttpResponseHandler() {
+        client.addHeader("Content-Type", "application/json");
+        client.get(url + "?id_categoria=" + idCategoria, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 try {
                     String respuesta = new String(responseBody);
                     JSONArray jsonArray = new JSONArray(respuesta);
 
+                    listaEventos.clear();
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject obj = jsonArray.getJSONObject(i);
 
@@ -92,7 +72,7 @@ public class MisEventosFragment extends Fragment {
                             for (int o = 0; o < fotosArray.length(); o++) {
                                 fotos.add(fotosArray.getString(o));
                             }
-                        } catch (JSONException e) {
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
 
@@ -110,28 +90,19 @@ public class MisEventosFragment extends Fragment {
                                 obj.getString("url_imagen"),
                                 fotos
                         );
-                        eventoList.add(evento);
+                        listaEventos.add(evento);
                     }
 
-                    adapter = new MisEventosViewModel.MisEventosAdapter(getContext(), eventoList);
-                    recyclerView.setAdapter(adapter);
-
+                    adapter.notifyDataSetChanged();
                 } catch (Exception e) {
                     e.printStackTrace();
-                    Toast.makeText(getContext(), "Error al procesar los datos", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Toast.makeText(getContext(), "Error al conectar con el servidor", Toast.LENGTH_SHORT).show();
+                // Manejar errores
             }
         });
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
     }
 }

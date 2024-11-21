@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".activity.ui.mis_eventos.MisEventosFragment">
 
-    <TextView
-        android:id="@+id/textMisEventos"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMisEventos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:padding="16dp" />
 
 </FrameLayout>

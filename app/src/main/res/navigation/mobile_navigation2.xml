@@ -53,4 +53,12 @@
         android:label="Detalle Evento Fragment"
         tools:layout="@layout/fragment_detalle_evento" />
 
+    <fragment
+        android:id="@+id/eventosPorCategoriaFragment"
+        android:name="sv.edu.catolica.g07_occasio.activity.ui.categorias.EventosPorCategoria"
+        android:label="Eventos por Categoría"
+        tools:layout="@layout/fragment_eventos_por_categoria" />
+
+
+
 </navigation>
