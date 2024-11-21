@@ -9,8 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -21,6 +19,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import sv.edu.catolica.g07_occasio.R;
+import sv.edu.catolica.g07_occasio.activity.ui.clases.Evento;
 
 public class HomeViewModel extends ViewModel {
 

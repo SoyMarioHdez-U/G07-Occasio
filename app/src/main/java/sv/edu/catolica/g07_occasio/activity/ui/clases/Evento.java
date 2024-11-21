@@ -1,4 +1,4 @@
-package sv.edu.catolica.g07_occasio.activity.ui.home;
+package sv.edu.catolica.g07_occasio.activity.ui.clases;
 
 import java.util.ArrayList;
 
