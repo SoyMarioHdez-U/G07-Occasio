@@ -86,11 +86,11 @@ public class DetalleEvento extends Fragment {
         }
 
 
-        String url = "http://192.168.5.179/WebServicePHP/validarAsistencia.php";
+        String url = "http://192.168.107.179/WebServicePHP/validarAsistencia.php";
         RequestParams params = new RequestParams();
         params.put("id_usuario", idUsuario);
         params.put("id_evento", idEvento);
-
+ 
 
         AsyncHttpClient client = new AsyncHttpClient();
         client.post(url, params, new AsyncHttpResponseHandler() {

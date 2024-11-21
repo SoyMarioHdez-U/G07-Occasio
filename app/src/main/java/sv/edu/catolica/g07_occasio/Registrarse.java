@@ -57,7 +57,7 @@ public class Registrarse extends AppCompatActivity {
     }
 
     public void registrarUsuario(View view){
-        String IP = "192.168.1.8";  // Cambia esta IP a la de tu servidor
+        String IP = "192.168.107.179";  // Cambia esta IP a la de tu servidor
 
         nombre = etNombre.getText().toString();
         apellido = etApellido.getText().toString();
