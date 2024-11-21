@@ -1,51 +1,6 @@
 <resources>
     <string name="app_name">Occasio</string>
-    <string name="texto_iv_banner_evento">Subir portada del evento:</string>
-    <string name="texto_tv_subir_portada">Subir portada del evento</string>
-    <string name="texto_tv_datos_evento">DATOS DEL EVENTO:</string>
-    <string name="texto_et_nombre_evento">Ingrese el nombre del evento</string>
-    <string name="texto_et_lugar_evento">Ingrese el lugar del evento</string>
-    <string name="texto_et_direccion_evento">Ingrese la dirección del evento (opcional)</string>
-    <string name="texto_tv_fecha_evento">Fecha:</string>
-    <string name="texto_et_fecha_evento">DD/MM/AA</string>
-    <string name="texto_tv_hora_evento">Hora:</string>
-    <string name="texto_et_hora_evento">00:00 P.M.</string>
-    <string name="texto_tv_categoria_evento">Categoría:</string>
-    <string name="texto_tv_descripcion_evento">Descripción del evento:</string>
-    <string name="texto_et_descripcion_evento">Escriba la descripción de su evento</string>
-    <string name="btn_continuar">Continuar</string>
-    <string name="texto_tv_administracion_evento">ADMISIÓN:</string>
-    <string name="texto_tv_pregunta">¿Cualquier persona puede asistir?</string>
-    <string name="texto_si">Si</string>
-    <string name="texto_no">No</string>
-    <string name="texto_tv_rango_edad">Rango de edad:</string>
-    <string name="texto_edad_minima">Mínima:</string>
-    <string name="filler__">--</string>
-    <string name="texto_edad_maxima">Máxima:</string>
-    <string name="texto_aceptar_manualmente">Aceptar manualmente cada solicitud:</string>
-    <string name="texto_tv_requisitos_adicionales">REQUISITOS ADICIONALES:</string>
-    <string name="texto_tv_aforo">Aforo:</string>
-    <string name="texto_afo_minimo">Mínimo:</string>
-    <string name="texto_afo_maximo">Máximo:</string>
-    <string name="texto_sw_cancelar">Cancelar si no alcanza aforo mínimo:</string>
-    <string name="texto_tv_tiempo_cancelacion">Indique cuanto tiempo antes del evento cancelar:</string>
-    <string name="filler00">00</string>
-    <string name="texto_meses">Meses</string>
-    <string name="texto_dias">Días</string>
-    <string name="texto_horas">Horas</string>
-    <string name="texto_minutos">Minutos</string>
-    <string name="texto_sw_galeria_evento">Galería del evento</string>
-    <string name="texto_sw_permitir_subir_fotos">Permitir que asistentes añadan fotos</string>
-    <string name="texto_tv_pagos">INFORMACIÓN SOBRE PAGOS:</string>
-    <string name="texto_tv_info_pagos">Establezca los precios de su evento</string>
-    <string name="texto_evento_gratuito">Evento gratuito</string>
-    <string name="texto_tv_entrada_general">Entrada General</string>
-    <string name="filler_dinero">$</string>
-    <string name="valor_default_precio_general">8.00</string>
-    <string name="texto_tv_entrada_vip">Entrada VIP</string>
-    <string name="valor_default_precio_vip">12.00</string>
-    <string name="texto_tv_advertencia">El manejo de los cobros es completa responsabilidad del organizador</string>
-    <string name="texto_btn_crear_evento">Crear evento</string>
+
     <string name="tx_cat_musica">MÚSICA</string>
     <string name="tx_cat_religoso">RELIGIOSO</string>
     <string name="tx_cat_deportes">DEPORTES</string>
@@ -63,5 +18,35 @@
     <string name="menu_slideshow">Crear evento</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="upload_an_image">Upload an image</string>
+    <string name="tv_upload_an_image">Upload an image</string>
+    <string name="tv_event_s_data">EVENT\'S DATA</string>
+    <string name="tv_event_name">Enter event name</string>
+    <string name="et_event_place">Enter event place</string>
+    <string name="et_event_direction">Enter event direction (optional)</string>
+    <string name="tv_date">Date</string>
+    <string name="et_ddmmyyy">DD/MM/YYYY</string>
+    <string name="tv_time">Time</string>
+    <string name="et_00_00">00:00</string>
+    <string name="tv_category">Category</string>
+    <string name="tv_event_description">Event description</string>
+    <string name="et_event_description_hint">Write a description for the event</string>
+    <string name="tv_admission">ADMISSION</string>
+    <string name="sw_event_appropiate_for_minors">Is the event appropiate for minors?</string>
+    <string name="sw_accept_request_manually">Do you want to accept each request manually?</string>
+    <string name="tv_extra_requirements">EXTRA REQUIREMENTS</string>
+    <string name="tv_capacity">Capacity</string>
+    <string name="tv_minimum_capacity">Minimum capacity</string>
+    <string name="tv_minimumcapacity_0">0</string>
+    <string name="tv_maximum_capacity">Maximum capacity</string>
+    <string name="et_maxcapacity_200">200</string>
+    <string name="tv_payments">PAYMENTS</string>
+    <string name="tv_set_up_payments">Set up your event prices</string>
+    <string name="sw_event_free">The event is free</string>
+    <string name="et_prices_description">Describe the event prices</string>
+    <string name="tv_alert">The organizer is responsible for collecting payments</string>
+    <string name="btn_create_event">Create event</string>
 
 </resources>
