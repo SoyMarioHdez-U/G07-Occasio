@@ -5,6 +5,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/tv_nombre_categoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre de la Categoría"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="16dp"
+        android:textColor="@color/black" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerEventosPorCategoria"
         android:layout_width="match_parent"

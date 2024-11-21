@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -31,28 +32,38 @@ public class EventosPorCategoria extends Fragment {
     private HomeViewModel.EventoAdapter adapter;
     private List<Evento> listaEventos;
 
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_eventos_por_categoria, container, false);
 
+
         recyclerView = root.findViewById(R.id.recyclerEventosPorCategoria);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
+        TextView tvNombreCategoria = root.findViewById(R.id.tv_nombre_categoria);
+
+
+        Bundle args = getArguments();
+        if (args != null) {
+            String nombreCategoria = args.getString("nombre_categoria", "Sin Categoría");
+            tvNombreCategoria.setText(nombreCategoria);
+
+
+            String idCategoria = args.getString("id_categoria");
+            cargarEventosPorCategoria(idCategoria);
+        }
+
 
         listaEventos = new ArrayList<>();
         adapter = new HomeViewModel.EventoAdapter(getContext(), listaEventos);
         recyclerView.setAdapter(adapter);
 
-        // Cargar eventos de la categoría seleccionada
-        Bundle args = getArguments();
-        if (args != null) {
-            String idCategoria = args.getString("id_categoria");
-            cargarEventosPorCategoria(idCategoria);
-        }
-
         return root;
     }
 
     private void cargarEventosPorCategoria(String idCategoria) {
-        String url = "http://192.168.5.179/WebServicePHP/obtenerEventosPorCategoria.php"; // Cambia a tu IP
+        String url = "http://192.168.5.179/WebServicePHP/obtenerEventosPorCategoria.php"; // Cambia por tu IP
         AsyncHttpClient client = new AsyncHttpClient();
         client.addHeader("Content-Type", "application/json");
         client.get(url + "?id_categoria=" + idCategoria, new AsyncHttpResponseHandler() {
@@ -101,7 +112,7 @@ public class EventosPorCategoria extends Fragment {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                // Manejar errores
+
             }
         });
     }
