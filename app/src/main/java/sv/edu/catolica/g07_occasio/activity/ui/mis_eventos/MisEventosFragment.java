@@ -71,7 +71,7 @@ public class MisEventosFragment extends Fragment {
             return;
         }
 
-        String url = "http://192.168.5.179/WebServicePHP/obtenerMisEventos.php";
+        String url = "http://192.168.1.8/WebServicePHP/obtenerMisEventos.php";
         AsyncHttpClient client = new AsyncHttpClient();
         RequestParams params = new RequestParams();
         params.put("id_usuario", idUsuario);

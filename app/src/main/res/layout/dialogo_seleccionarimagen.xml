@@ -32,7 +32,7 @@
                 android:id="@+id/tvFoto"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/camara"
+                android:src="@drawable/ic_menu_camera"
                 />
             <TextView
                 android:layout_width="wrap_content"

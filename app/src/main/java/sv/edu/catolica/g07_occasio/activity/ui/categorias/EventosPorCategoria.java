@@ -63,7 +63,7 @@ public class EventosPorCategoria extends Fragment {
     }
 
     private void cargarEventosPorCategoria(String idCategoria) {
-        String url = "http://192.168.5.179/WebServicePHP/obtenerEventosPorCategoria.php"; // Cambia por tu IP
+        String url = "http://192.168.1.8/WebServicePHP/obtenerEventosPorCategoria.php"; // Cambia por tu IP
         AsyncHttpClient client = new AsyncHttpClient();
         client.addHeader("Content-Type", "application/json");
         client.get(url + "?id_categoria=" + idCategoria, new AsyncHttpResponseHandler() {

@@ -55,7 +55,7 @@ public class EventosPasadosFragment extends Fragment {
     }
 
     private void cargarEventosPasados() {
-        String url = "http://192.168.5.179/WebServicePHP/obtenerEventosPasados.php"; // Cambia por tu IP
+        String url = "http://192.168.1.8/WebServicePHP/obtenerEventosPasados.php"; // Cambia por tu IP
 
         SessionManager sessionManager = new SessionManager(requireContext());
         String idUsuario = sessionManager.getIdUsuario();

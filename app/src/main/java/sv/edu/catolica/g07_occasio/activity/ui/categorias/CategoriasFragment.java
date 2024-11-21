@@ -54,7 +54,7 @@ public class CategoriasFragment extends Fragment {
     }
 
     private void cargarCategorias() {
-        String url = "http://192.168.5.179/WebServicePHP/obtenerCategorias.php"; // Cambia por tu IP
+        String url = "http://192.168.1.8/WebServicePHP/obtenerCategorias.php"; // Cambia por tu IP
         AsyncHttpClient client = new AsyncHttpClient();
 
         client.get(url, new AsyncHttpResponseHandler() {

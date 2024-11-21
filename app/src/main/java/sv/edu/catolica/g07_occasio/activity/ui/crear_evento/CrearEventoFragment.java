@@ -64,7 +64,7 @@ public class CrearEventoFragment extends Fragment {
 
     private ArrayList<crear_categoria> categorias;
     private String portadaUrl = "";
-    private static final String IP = "192.168.5.179";
+    private static final String IP = "192.168.1.8";
 
     private static final int TAKE_PICTURE = 500;
     private static final int SELECT_PICTURE = 600;

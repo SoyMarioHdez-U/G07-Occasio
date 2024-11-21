@@ -54,7 +54,7 @@ public class EventosAsistirFragment extends Fragment {
     }
 
     private void cargarEventosAsistir() {
-        String url = "http://192.168.5.179/WebServicePHP/obtenerEventosAsistir.php"; // Cambia por tu IP
+        String url = "http://192.168.1.8/WebServicePHP/obtenerEventosAsistir.php"; // Cambia por tu IP
 
 
         SessionManager sessionManager = new SessionManager(requireContext());
