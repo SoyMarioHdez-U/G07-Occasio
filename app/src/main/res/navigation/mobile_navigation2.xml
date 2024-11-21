@@ -50,7 +50,7 @@
     <fragment
         android:id="@+id/detalleEventoFragment"
         android:name="sv.edu.catolica.g07_occasio.activity.ui.detalles.DetalleEvento"
-        android:label="Detalle Evento Fragment"
+        android:label="@string/txt_menu_details"
         tools:layout="@layout/fragment_detalle_evento" />
 
     <fragment

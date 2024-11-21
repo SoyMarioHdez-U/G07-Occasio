@@ -106,10 +106,34 @@
     <string name="tx_menu_categories">Categories</string>
     <string name="tx_menu_create_event">Create Event</string>
     <string name="tx_menu_my_events">My Events</string>
-    <string name="tx_menu_events_i_will_attend">Events I will attend</string>
+    <string name="tx_menu_events_i_will_attend">My Upcoming Events</string>
     <string name="tx_menu_past_events">Past Events</string>
     <string name="tx_menu_notifications">Notifications</string>
     <string name="tx_menu_log_out">Log out</string>
+    <string name="txt_menu_details">Details</string>
+    <string name="txt_login_welcome">Welcome!</string>
+    <string name="txt_login_enter_sesion">Please log in</string>
+    <string name="txt_login_user">Email:</string>
+    <string name="et_login_user">user@email.com</string>
+    <string name="txt_login_password">Password:</string>
+    <string name="et_login_password" translatable="false">********</string>
+    <string name="btn_login_singin">SIGN IN</string>
+    <string name="txt_login_have_account">Don\'t have an account?</string>
+    <string name="txt_login_signup">Sign up here!</string>
+    <string name="txt_register_title">Ready to have fun?</string>
+    <string name="txt_register_description">Enter your details to sign up</string>
+    <string name="txt_register_name">First Name:</string>
+    <string name="txt_register_last_name">Last Name:</string>
+    <string name="et_register_hint_name">John</string>
+    <string name="et_register_hint_lastname">Perez</string>
+    <string name="txt_register_dateofbirthday">Fecha de nacimiento:</string>
+    <string name="et_register_hint_birthday">YYYY-MM-DD</string>
+    <string name="txt_register_email">Email:</string>
+    <string name="et_register_hint_email">user@example.com</string>
+    <string name="et_register_hint_password" translatable="false">********</string>
+    <string name="btn_register_signup">SIGN UP</string>
+    <string name="txt_register_haveaccount">Already have an account?</string>
+    <string name="txt_register_signin">Log in here!</string>
 
 
 </resources>

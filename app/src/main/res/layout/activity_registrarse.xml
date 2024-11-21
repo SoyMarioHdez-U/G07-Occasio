@@ -8,7 +8,7 @@
     android:background="@drawable/background_login"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    tools:context=".Registrarse">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -21,7 +21,7 @@
         android:layout_width="282dp"
         android:layout_height="33dp"
         android:fontFamily="sans-serif-light"
-        android:text="¿Listo para divertirte?"
+        android:text="@string/txt_register_title"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
-        android:text="Ingresa tus datos para registrarte"
+        android:text="@string/txt_register_description"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="16dp" />
@@ -43,17 +43,16 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:paddingTop="20dp"
-        android:text="Nombre:"
+        android:text="@string/txt_register_name"
         android:textColor="@color/white" />
 
     <EditText
         android:id="@+id/et_nombre"
-        android:text="Juan"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:background="@drawable/redondeado"
         android:ems="10"
-        android:hint="Juan"
+        android:hint="@string/et_register_hint_name"
         android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="@color/material_dynamic_neutral30" />
@@ -64,17 +63,16 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:paddingTop="10dp"
-        android:text="Apellido:"
+        android:text="@string/txt_register_last_name"
         android:textColor="@color/white" />
 
     <EditText
         android:id="@+id/et_apellido"
-        android:text="Pérez"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:background="@drawable/redondeado"
         android:ems="10"
-        android:hint="Pérez"
+        android:hint="@string/et_register_hint_lastname"
         android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="@color/material_dynamic_neutral30" />
@@ -86,17 +84,16 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:paddingTop="10dp"
-        android:text="Fecha de nacimiento:"
+        android:text="@string/txt_register_dateofbirthday"
         android:textColor="@color/white" />
 
     <EditText
         android:id="@+id/et_fecha_nac"
-        android:text="2001-1-4"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:background="@drawable/redondeado"
         android:ems="10"
-        android:hint="AAAA-MM-DD"
+        android:hint="@string/et_register_hint_birthday"
         android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="@color/material_dynamic_neutral30" />
@@ -107,17 +104,16 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:paddingTop="10dp"
-        android:text="Correo electrónico:"
+        android:text="@string/txt_register_email"
         android:textColor="@color/white" />
 
     <EditText
         android:id="@+id/et_email"
-        android:text="juanperez@gmail.com"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:background="@drawable/redondeado"
         android:ems="10"
-        android:hint="nombre@ejemplo.com"
+        android:hint="@string/et_register_hint_email"
         android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="@color/material_dynamic_neutral30" />
@@ -134,13 +130,12 @@
 
     <EditText
         android:id="@+id/et_password"
-        android:text="occasio"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:background="@drawable/redondeado"
         android:ems="10"
-        android:hint="********"
-        android:inputType="text"
+        android:hint="@string/et_register_hint_password"
+        android:inputType="textPassword"
         android:textColor="@color/black"
         android:textColorHint="@color/material_dynamic_neutral30" />
 
@@ -153,7 +148,7 @@
         android:layout_margin="20dp"
         android:backgroundTint="@color/botones"
         android:padding="10dp"
-        android:text="REGISTRARSE"
+        android:text="@string/btn_register_signup"
         android:textColor="@color/white"
         app:iconPadding="40dp"
         android:onClick="registrarUsuario"/>
@@ -170,7 +165,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="sans-serif-medium"
-            android:text="¿Ya tienes cuenta?"
+            android:text="@string/txt_register_haveaccount"
             android:textColor="@color/white" />
 
         <TextView
@@ -180,7 +175,7 @@
             android:layout_weight="1"
             android:fontFamily="sans-serif-condensed"
             android:onClick="AbrirIngresar"
-            android:text="Ingresa aquí"
+            android:text="@string/txt_register_signin"
             android:textColor="@color/botones" />
     </LinearLayout>
 
