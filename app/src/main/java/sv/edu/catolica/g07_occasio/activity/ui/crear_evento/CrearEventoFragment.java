@@ -15,24 +15,19 @@ import sv.edu.catolica.g07_occasio.activity.ui.crear_evento.CrearEventoViewModel
 
 public class CrearEventoFragment extends Fragment {
 
-    private FragmentCrearEventoBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+                             ViewGroup container, Bundle savedInstanceState)
+    {
         CrearEventoViewModel CrearEventoViewModel =
                 new ViewModelProvider(this).get(CrearEventoViewModel.class);
 
-        binding = FragmentCrearEventoBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        CrearEventoViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
+        return null;
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        binding = null;
     }
 }

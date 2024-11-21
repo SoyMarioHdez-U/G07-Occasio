@@ -379,7 +379,7 @@ public class CrearEvento extends AppCompatActivity {
 
         if (imageUri != null) {
             // Obtén la referencia de Firebase Storage
-            FireBaseStorage storage = FireBaseStorage.getInstance();
+            FirebaseStorage storage = FirebaseStorage.getInstance();
             StorageReference storageReference = storage.getReference();
 
             // Genera un nombre único para la imagen
@@ -390,15 +390,22 @@ public class CrearEvento extends AppCompatActivity {
 
             // Sube la imagen
             uploadtask.addOnSuccessListener(taskSnapshot -> {
-                // Obtén la URL de descarga
-                fileReference.getDownloadUrl().addOnSuccessListener(uri -> {
-                    // La URL está aquí
-                    String downloadUrl = uri.toString();
+                        // Obtén la URL de descarga
+                        fileReference.getDownloadUrl().addOnSuccessListener(uri -> {
+                            // La URL está aquí
+                            String downloadUrl = uri.toString();
 
-                    portadaurl = downloadUrl;
-                    Log.d("Firebase", "Download URL: " + downloadUrl);
-                });
-            });
+                            portadaurl = downloadUrl;
+                            Log.d("Firebase", "Download URL: " + downloadUrl);
+                        }).addOnFailureListener(e -> {
+                            // Manejar errores al obtener la URL
+                            Log.e("Firebase", "Error al obtener la URL", e);
+                        });
+                    })
+                    .addOnFailureListener(e -> {
+                        // Manejar errores en la subida
+                        Log.e("Firebase", "Error al subir la imagen", e);
+                    });
         }
         else
         {

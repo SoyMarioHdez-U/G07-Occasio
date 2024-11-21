@@ -14,6 +14,7 @@ navigationFragment = "2.8.3"
 navigationUi = "2.8.3"
 legacySupportV4 = "1.0.0"
 playServicesTasks = "18.2.0"
+firebaseBom = "33.6.0"
 firebaseStorage = "21.0.1"
 
 [libraries]
@@ -31,7 +32,9 @@ navigation-fragment = { group = "androidx.navigation", name = "navigation-fragme
 navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version.ref = "navigationUi" }
 legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacySupportV4" }
 play-services-tasks = { group = "com.google.android.gms", name = "play-services-tasks", version.ref = "playServicesTasks" }
-firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+firebase-storage = { module = "com.google.firebase:firebase-storage", version.ref = "firebaseStorage" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
