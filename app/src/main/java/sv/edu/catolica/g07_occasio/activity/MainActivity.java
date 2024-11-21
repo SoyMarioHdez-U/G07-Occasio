@@ -1,6 +1,10 @@
 package sv.edu.catolica.g07_occasio.activity;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -11,9 +15,15 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.work.OneTimeWorkRequest;
+import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkManager;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -21,8 +31,11 @@ import com.loopj.android.http.RequestParams;
 
 import org.json.JSONObject;
 
+import java.util.concurrent.TimeUnit;
+
 import cz.msebera.android.httpclient.Header;
 import sv.edu.catolica.g07_occasio.Categorias;
+import sv.edu.catolica.g07_occasio.Notificacion.NotificacionesWorker;
 import sv.edu.catolica.g07_occasio.R;
 import sv.edu.catolica.g07_occasio.Registrarse;
 import sv.edu.catolica.g07_occasio.sesion_actual.SessionManager;
@@ -41,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
+
+
         usuario = findViewById(R.id.et_email);
         clave = findViewById(R.id.et_password);
 
@@ -50,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
+
 
     public void ingresar(View view) {
         String IP = "192.168.5.179";
@@ -133,4 +149,5 @@ public class MainActivity extends AppCompatActivity {
         }, 2000);
 
     }
+
 }

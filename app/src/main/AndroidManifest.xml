@@ -5,6 +5,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
     <application
         android:name=".App"
@@ -16,29 +19,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.G07Occasio"
         tools:targetApi="31">
+
         <activity
             android:name=".activity.InicioActivity"
             android:exported="false"
             android:label="@string/title_activity_inicio"
-            android:theme="@style/Theme.G07Occasio.NoActionBar">
-        </activity>>
+            android:theme="@style/Theme.G07Occasio.NoActionBar" />
+
         <activity
             android:name=".Categorias"
             android:exported="false" />
+
         <activity
             android:name=".Registrarse"
             android:exported="false" />
 
-
         <activity
             android:name=".activity.MainActivity"
             android:exported="true">
-                <intent-filter>
-                    <action android:name="android.intent.action.MAIN" />
-
-                    <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-    </application>
 
+        <receiver
+            android:name=".Notificacion.NotificationReceiver"
+            android:exported="true" />
+
+    </application>
 </manifest>

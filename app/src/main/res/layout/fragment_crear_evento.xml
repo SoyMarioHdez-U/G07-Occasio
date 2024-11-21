@@ -1,22 +1,481 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EAEAEA"
+    android:orientation="vertical"
     tools:context=".activity.ui.crear_evento.CrearEventoFragment">
 
-    <TextView
-        android:id="@+id/text_slideshow"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#D8D8D8">
+
+                <ImageView
+                    android:id="@+id/bannerEvento"
+                    android:layout_width="match_parent"
+                    android:layout_height="195dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/texto_ivbannerevento"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/icono_imagen" />
+
+                <TextView
+                    android:id="@+id/tvSubirPortada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="center"
+                    android:text="@string/textotvsubirportada"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvDatos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/textotvdatosevento"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/divisor" />
+
+            <EditText
+                android:id="@+id/etNombreEvento"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:background="@color/white"
+                android:ems="10"
+                android:hint="@string/textoetnombreevento"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp" />
+
+            <EditText
+                android:id="@+id/etLugarEvento"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:background="@color/white"
+                android:ems="10"
+                android:hint="@string/textoetlugarevento"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp" />
+
+            <EditText
+                android:id="@+id/etDireccionEvento"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:background="@color/white"
+                android:ems="10"
+                android:hint="@string/textoetdireccionevento"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="5dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvFecha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/textotvfechaevento"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etFecha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@color/white"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="@string/textoetfechaevento"
+                        android:importantForAutofill="no"
+                        android:inputType="date" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvHora"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/textotvhoraevento"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etHora"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="5dp"
+                        android:background="@color/white"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="@string/textoethoraevento"
+                        android:importantForAutofill="no"
+                        android:inputType="time" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvCategoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textotvcategoriaevento"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spCategoria"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:padding="5dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/textotvdescripcionevento"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/white"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/textoetdescripcionevento"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp" />
+
+            <TextView
+                android:id="@+id/tvAdmision"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/textotvadmisionevento"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@drawable/divisor"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"/>
+
+            <Switch
+                android:id="@+id/swpregunta"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/textotvpregunta"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:checked="false"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <Switch
+                android:id="@+id/swAceptarSolicitudManualmente"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/textoswaceptarmanualmente"
+                android:textSize="18sp"
+                tools:ignore="UseSwitchCompatOrMaterialXml"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:checked="false"/>
+
+
+            <TextView
+                android:id="@+id/tvRequisitosAdicionales"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/textotvrequisitosadicionales"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@drawable/divisor"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="5dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/borde"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tvAforo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/textotvaforo"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvAforoMinimo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/textominimo"
+                            android:textSize="18sp"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:id="@+id/etAforoMinimo"
+                            android:layout_width="60dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="9dp"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:text="0"
+                            tools:ignore="LabelFor"
+                            android:enabled="false"/>
+
+                        <CheckBox
+                            android:id="@+id/ckbAforoMinimo"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvAforoMaximo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/textomaximo"
+                            android:textSize="18sp"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:id="@+id/etAforoMaximo"
+                            android:layout_width="60dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:text="200"
+                            tools:ignore="LabelFor"
+                            android:enabled="false"/>
+
+                        <CheckBox
+                            android:id="@+id/ckbAforoMaximo"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvPagos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/textotvpagos"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@drawable/divisor"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"/>
+
+            <TextView
+                android:id="@+id/tvInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/textotvinfopagos"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <Switch
+                android:id="@+id/swEventoGratis"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:text="@string/textoeventogratuito"
+                android:textSize="18sp"
+                tools:ignore="UseSwitchCompatOrMaterialXml"
+                android:checked="true"/>
+
+            <EditText
+                android:id="@+id/etPrecio"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/borde"
+                android:gravity="top"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:hint="@string/textodescrip"
+                tools:ignore="LabelFor"
+                android:enabled="false"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@drawable/divisor"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/tvAdvertencia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/textotvadvertencia"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <Button
+                android:id="@+id/btnCrear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="@string/textobtncrearevento" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

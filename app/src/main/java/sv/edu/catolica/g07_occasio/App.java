@@ -2,7 +2,7 @@ package sv.edu.catolica.g07_occasio;
 
 import android.app.Application;
 import android.content.Context;
-
+import com.google.firebase.FirebaseApp;
 import com.facebook.stetho.DumperPluginsProvider;
 import com.facebook.stetho.Stetho;
 import com.facebook.stetho.dumpapp.DumperPlugin;
@@ -13,6 +13,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        FirebaseApp.initializeApp(this);
         context = this;
         Stetho.initialize(
                 Stetho.newInitializerBuilder(context)
