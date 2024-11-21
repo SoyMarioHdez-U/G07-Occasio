@@ -346,7 +346,7 @@
                             android:gravity="center"
                             android:importantForAutofill="no"
                             android:inputType="number"
-                            android:text="@string/filler__"
+                            android:text="0"
                             tools:ignore="LabelFor"
                             android:enabled="false"/>
 
@@ -380,7 +380,7 @@
                             android:gravity="center"
                             android:importantForAutofill="no"
                             android:inputType="number"
-                            android:text="@string/filler__"
+                            android:text="200"
                             tools:ignore="LabelFor"
                             android:enabled="false"/>
 

@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -98,7 +99,7 @@ public class CrearEvento extends AppCompatActivity {
 
         evento = new eventos();
 
-        IP = "192.168.1.85";
+        IP = "192.168.1.8";
 
         categorias  = new ArrayList<>();
 
@@ -191,24 +192,27 @@ public class CrearEvento extends AppCompatActivity {
     }
 
 
-    public void crearEvento(View view)
-    {
-
+    public void crearEvento(View view) {
         int idUsu = 1;
 
+        // Obtener la fecha de creación del evento
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         String fechaCreacion = sdf.format(Calendar.getInstance().getTime());
 
-        if(nombreEvento.getText().length() ==0 || fechaEvento.getText().length() ==0  || horaEvento.getText().length() ==0 )
-        {
+        // Validar campos obligatorios
+        if (nombreEvento.getText().length() == 0 || fechaEvento.getText().length() == 0 || horaEvento.getText().length() == 0) {
             AlertDialog.Builder advertencia = new AlertDialog.Builder(this);
-
             advertencia.setTitle("Empty fields");
             advertencia.setMessage("Make sure you have filled out all the important fields like the name, date, and hour");
             advertencia.show();
+            return; // Salir si los campos obligatorios están vacíos
         }
-        else
-        {
+
+        // Inicializar el objeto Evento si no está inicializado
+
+
+        // Asignar valores al evento
+        try {
             evento.setIdUsuario(idUsu);
             evento.setNombre_evento(nombreEvento.getText().toString());
             evento.setDescripcion(descripcionEvento.getText().toString());
@@ -217,89 +221,63 @@ public class CrearEvento extends AppCompatActivity {
             evento.setLugar(lugarEvento.getText().toString());
             evento.setDireccion(direccionEvento.getText().toString());
             evento.setPrecios(precios.getText().toString());
+            evento.setFecha_creacion(fechaCreacion);
 
+            // Validar y asignar categoría
             for (categorias categoria : categorias) {
-                if (categoria.getNombre_categoria().equals(categoriaEvento.getSelectedItem().toString()))
-                {
+                if (categoria.getNombre_categoria().equals(categoriaEvento.getSelectedItem().toString())) {
                     evento.setId_categoria(categoria.getId_categoria());
                     break;
                 }
             }
 
-            if(asistenciaAprobada.isChecked())
-            {
-                evento.setAsistencia_aprobada("aprobada");
-            }
-            else
-            {
-                evento.setAsistencia_aprobada("libre");
-            }
+            // Validar asistencia aprobada
+            evento.setAsistencia_aprobada(asistenciaAprobada.isChecked() ? "aprobada" : "libre");
 
-            if(aforominimo.isChecked())
-            {
-                if(aforoMin.getText().equals("--") || aforoMin.getText().length() == 0)
-                {
+            // Validar aforo mínimo
+            if (aforominimo.isChecked()) {
+                String aforoMinText = aforoMin.getText().toString();
+                if (aforoMinText.isEmpty() || !TextUtils.isDigitsOnly(aforoMinText)) {
                     AlertDialog.Builder advertencia = new AlertDialog.Builder(this);
-
-                    advertencia.setTitle("Didn't specified a number");
-                    advertencia.setMessage("Make sure you have specified the minimum number of participants");
+                    advertencia.setTitle("Invalid input");
+                    advertencia.setMessage("Minimum capacity must be a valid number.");
+                    advertencia.show();
+                    return;
                 }
-                else
-                {
-                    evento.setAforo_minimo(Integer.parseInt(aforoMin.getText().toString()));
-                }
-            }
-            else
-            {
+                evento.setAforo_minimo(Integer.parseInt(aforoMinText));
+            } else {
                 evento.setAforo_minimo(0);
             }
 
-            if(aforomaximo.isChecked())
-            {
-                if(aforoMax.getText().equals("--") || aforoMax.getText().length() == 0)
-                {
+            // Validar aforo máximo
+            if (aforomaximo.isChecked()) {
+                String aforoMaxText = aforoMax.getText().toString();
+                if (aforoMaxText.isEmpty() || !TextUtils.isDigitsOnly(aforoMaxText)) {
                     AlertDialog.Builder advertencia = new AlertDialog.Builder(this);
-
-                    advertencia.setTitle("Didn't specified a number");
-                    advertencia.setMessage("Make sure you have specified the maximum number of participants");
+                    advertencia.setTitle("Invalid input");
+                    advertencia.setMessage("Maximum capacity must be a valid number.");
                     advertencia.show();
+                    return;
                 }
-                else
-                {
-                    evento.setAforo_maximo(Integer.parseInt(aforoMax.getText().toString()));
-                }
-            }
-            else
-            {
+                evento.setAforo_maximo(Integer.parseInt(aforoMaxText));
+            } else {
                 evento.setAforo_maximo(0);
             }
 
-            if(restriccionEdad.isChecked())
-            {
-                evento.setRestriccion_edad("todo_publico");
-            }
-            else
-            {
-                evento.setRestriccion_edad("mayores");
-            }
+            // Validar restricción de edad
+            evento.setRestriccion_edad(restriccionEdad.isChecked() ? "mayores" : "todo_publico");
 
-            evento.setFecha_creacion(fechaCreacion);
+            // Subir imagen a Firebase y manejar la URL
             subirImagenAFirebase();
-
-            if (portadaurl == null)
-            {
-                evento.setUrl_imagen("portadaurl");
-
-            }
-            else {
+            if (portadaurl == null || portadaurl.isEmpty()) {
+                evento.setUrl_imagen("default_image_url"); // URL predeterminada si no se obtiene la imagen
+            } else {
                 evento.setUrl_imagen(portadaurl);
-
             }
 
-
-            String url = "http://"+IP+"/crearevento.php";
+            // Enviar datos al servidor
+            String url = "http://" + IP + "/WebServicePHP/crearevento.php";
             AsyncHttpClient client = new AsyncHttpClient();
-
             RequestParams parametros = new RequestParams();
 
             parametros.put("id_usuario", evento.getIdUsuario());
@@ -314,45 +292,42 @@ public class CrearEvento extends AppCompatActivity {
             parametros.put("asistencia_aprobada", evento.getAsistencia_aprobada());
             parametros.put("aforo_minimo", evento.getAforo_minimo());
             parametros.put("aforo_maximo", evento.getAforo_maximo());
-            parametros.put("restriccion_edad",evento.getRestriccion_edad() );
+            parametros.put("restriccion_edad", evento.getRestriccion_edad());
             parametros.put("url_imagen", evento.getUrl_imagen());
             parametros.put("fecha_creacion", evento.getFecha_creacion());
 
             client.post(url, parametros, new AsyncHttpResponseHandler() {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                    if (statusCode==200){
-                        try {
-                            String respuesta = new String(responseBody);
-                            JSONObject json = new JSONObject(respuesta);
-                            if(json.names().get(0).equals("exito")){
-                                resultado = "The event was created succesfully";
-                            }
-                            else{
-                                resultado = "error";
-                            }
-                        }
-                        catch (Exception e){
-                            e.printStackTrace();
-                        }
+                    try {
+                        String respuesta = new String(responseBody);
+                        JSONObject json = new JSONObject(respuesta);
+                        if (json.names().get(0).equals("exito")) {
+                            Toast.makeText(CrearEvento.this, "The event was created successfully.", Toast.LENGTH_SHORT).show();
 
-
+                        } else {
+                            Toast.makeText(CrearEvento.this, "Error creating the event.", Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (Exception e) {
+                        Log.e("CrearEvento", "Error parsing response: ", e);
                     }
                 }
 
                 @Override
                 public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                    resultado = "fallamos";
+                    Toast.makeText(CrearEvento.this, "Failed to connect to server.", Toast.LENGTH_SHORT).show();
+                    Log.e("CrearEvento", "Request failed: ", error);
                 }
             });
-
-            Toast.makeText(this, resultado, Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            Log.e("CrearEvento", "Error creating the event: ", e);
         }
     }
 
+
     public void cargarcat()
     {
-        url = "http://"+IP+"/leercategorias.php";
+        url = "http://"+IP+"/WebServicePHP/leercategorias.php";
 
 
 
