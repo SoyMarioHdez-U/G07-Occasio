@@ -29,7 +29,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="195dp"
                     android:layout_gravity="center"
-                    android:contentDescription="Upload an image"
+                    android:contentDescription="@string/upload_an_image"
                     android:padding="10dp"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/icono_imagen" />
@@ -41,7 +41,7 @@
                     android:layout_gravity="bottom|center"
                     android:layout_marginBottom="0dp"
                     android:gravity="center"
-                    android:text="Upload an image"
+                    android:text="@string/tv_upload_an_image"
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </FrameLayout>
@@ -54,7 +54,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="5dp"
-                android:text="EVENT'S DATA"
+                android:text="@string/tv_event_s_data"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -74,7 +74,7 @@
                 android:layout_marginEnd="15dp"
                 android:background="@color/white"
                 android:ems="10"
-                android:hint="Enter event name"
+                android:hint="@string/tv_event_name"
                 android:importantForAutofill="no"
                 android:inputType="text"
                 android:paddingStart="5dp"
@@ -89,7 +89,7 @@
                 android:layout_marginEnd="15dp"
                 android:background="@color/white"
                 android:ems="10"
-                android:hint="Enter event place"
+                android:hint="@string/et_event_place"
                 android:importantForAutofill="no"
                 android:inputType="text"
                 android:paddingStart="5dp"
@@ -104,7 +104,7 @@
                 android:layout_marginEnd="15dp"
                 android:background="@color/white"
                 android:ems="10"
-                android:hint="Enter event direction (optional)"
+                android:hint="@string/et_event_direction"
                 android:importantForAutofill="no"
                 android:inputType="text"
                 android:paddingStart="5dp"
@@ -130,7 +130,7 @@
                         android:id="@+id/tvFecha"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Date"
+                        android:text="@string/tv_date"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -143,7 +143,7 @@
                         android:background="@color/white"
                         android:ems="10"
                         android:gravity="center"
-                        android:hint="DD/MM/YYYY"
+                        android:hint="@string/et_ddmmyyy"
                         android:importantForAutofill="no"
                         android:inputType="date" />
 
@@ -159,7 +159,7 @@
                         android:id="@+id/tvHora"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Time"
+                        android:text="@string/tv_time"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -171,7 +171,7 @@
                         android:background="@color/white"
                         android:ems="10"
                         android:gravity="center"
-                        android:hint="00:00"
+                        android:hint="@string/et_00_00"
                         android:importantForAutofill="no"
                         android:inputType="time" />
 
@@ -191,7 +191,7 @@
                     android:id="@+id/tvCategoria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Category"
+                    android:text="@string/tv_category"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -213,7 +213,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="5dp"
-                android:text="Enter event description"
+                android:text="@string/tv_event_description"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -228,7 +228,7 @@
                 android:background="@color/white"
                 android:ems="10"
                 android:gravity="start|top"
-                android:hint="Write a description for the event"
+                android:hint="@string/et_event_description_hint"
                 android:importantForAutofill="no"
                 android:inputType="textMultiLine"
                 android:paddingStart="5dp"
@@ -241,7 +241,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginTop="5dp"
-                android:text="ADMISSION"
+                android:text="@string/tv_admission"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 />
@@ -256,7 +256,7 @@
                 android:id="@+id/swpregunta"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="Is the event appropiate for minors?"
+                android:text="@string/sw_event_appropiate_for_minors"
                 android:textSize="18sp"
                 android:textStyle="normal"
                 android:layout_marginStart="15dp"
@@ -270,7 +270,7 @@
                 android:id="@+id/swAceptarSolicitudManualmente"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="Do you want to accept each request manually?"
+                android:text="@string/sw_accept_request_manually"
                 android:textSize="18sp"
                 tools:ignore="UseSwitchCompatOrMaterialXml"
                 android:layout_marginStart="15dp"
@@ -285,7 +285,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginTop="5dp"
-                android:text="EXTRA REQUIREMENTS"
+                android:text="@string/tv_extra_requirements"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 />
@@ -319,7 +319,7 @@
                         android:id="@+id/tvAforo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Capacity"
+                        android:text="@string/tv_capacity"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -332,7 +332,7 @@
                             android:id="@+id/tvAforoMinimo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Minimum capacity"
+                            android:text="@string/tv_minimum_capacity"
                             android:textSize="18sp"
                             android:textStyle="normal" />
 
@@ -346,7 +346,7 @@
                             android:gravity="center"
                             android:importantForAutofill="no"
                             android:inputType="number"
-                            android:text="0"
+                            android:text="@string/tv_minimumcapacity_0"
                             tools:ignore="LabelFor"
                             android:enabled="false"/>
 
@@ -366,7 +366,7 @@
                             android:id="@+id/tvAforoMaximo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Maximum capacity"
+                            android:text="@string/tv_maximum_capacity"
                             android:textSize="18sp"
                             android:textStyle="normal" />
 
@@ -380,7 +380,7 @@
                             android:gravity="center"
                             android:importantForAutofill="no"
                             android:inputType="number"
-                            android:text="200"
+                            android:text="@string/et_maxcapacity_200"
                             tools:ignore="LabelFor"
                             android:enabled="false"/>
 
@@ -402,7 +402,7 @@
                 android:layout_marginEnd="15dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
-                android:text="PAYMENTS"
+                android:text="@string/tv_payments"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -417,7 +417,7 @@
                 android:id="@+id/tvInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Set up your event payments"
+                android:text="@string/tv_set_up_payments"
                 android:textSize="18sp"
                 android:textStyle="normal"
                 android:layout_marginStart="15dp"
@@ -430,7 +430,7 @@
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="15dp"
-                android:text="The event is free"
+                android:text="@string/sw_event_free"
                 android:textSize="18sp"
                 tools:ignore="UseSwitchCompatOrMaterialXml"
                 android:checked="true"/>
@@ -447,7 +447,7 @@
                 android:paddingEnd="15dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:hint="Describe the event prices"
+                android:hint="@string/et_prices_description"
                 tools:ignore="LabelFor"
                 android:enabled="false"/>
             <View
@@ -462,7 +462,7 @@
                 android:id="@+id/tvAdvertencia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="The organizer is responsible for collecting payments"
+                android:text="@string/tv_alert"
                 android:textSize="18sp"
                 android:textStyle="normal"
                 android:layout_marginStart="15dp"
@@ -477,7 +477,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginTop="5dp"
-                android:text="Create event"
+                android:text="@string/btn_create_event"
                 android:onClick="crearEvento"/>
 
         </LinearLayout>
