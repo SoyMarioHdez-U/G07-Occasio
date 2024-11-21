@@ -52,12 +52,12 @@
     <string name="tv_event_s_data">EVENT\'S DATA</string>
     <string name="tv_event_name">Enter event name</string>
     <string name="et_event_place">Enter event place</string>
-    <string name="et_event_direction">Enter event direction (optional)</string>
-    <string name="tv_date">Date</string>
+    <string name="et_event_direction">Enter event address (optional)</string>
+    <string name="tv_date">Date:</string>
     <string name="et_ddmmyyy">DD/MM/YYYY</string>
-    <string name="tv_time">Time</string>
+    <string name="tv_time">Time:</string>
     <string name="et_00_00">00:00</string>
-    <string name="tv_category">Category</string>
+    <string name="tv_category">Category:</string>
     <string name="tv_event_description">Event description</string>
     <string name="et_event_description_hint">Write a description for the event</string>
     <string name="tv_admission">ADMISSION</string>
@@ -65,9 +65,9 @@
     <string name="sw_accept_request_manually">Do you want to accept each request manually?</string>
     <string name="tv_extra_requirements">EXTRA REQUIREMENTS</string>
     <string name="tv_capacity">Capacity</string>
-    <string name="tv_minimum_capacity">Minimum capacity</string>
+    <string name="tv_minimum_capacity">Minimum capacity:</string>
     <string name="tv_minimumcapacity_0">0</string>
-    <string name="tv_maximum_capacity">Maximum capacity</string>
+    <string name="tv_maximum_capacity">Maximum capacity:</string>
     <string name="et_maxcapacity_200">200</string>
     <string name="tv_payments">PAYMENTS</string>
     <string name="tv_set_up_payments">Set up your event prices</string>
@@ -75,5 +75,10 @@
     <string name="et_prices_description">Describe the event prices</string>
     <string name="tv_alert">The organizer is responsible for collecting payments</string>
     <string name="btn_create_event">Create event</string>
+    <string name="tv_event_name2">Event Name</string>
+    <string name="tv_place">Place:</string>
+    <string name="et_place_name">Place Name</string>
+    <string name="tv_address">Address:</string>
+    <string name="btn_update_changes">Update changes</string>
 
 </resources>

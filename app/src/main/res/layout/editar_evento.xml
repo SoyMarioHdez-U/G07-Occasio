@@ -28,7 +28,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="195dp"
                     android:layout_gravity="center"
-                    android:contentDescription="@string/texto_iv_banner_evento"
+                    android:contentDescription="@string/upload_an_image"
                     android:padding="50dp"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/icono_imagen" />
@@ -50,7 +50,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="5dp"
-                android:text="Nombre del evento"
+                android:text="@string/tv_event_name2"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -67,7 +67,7 @@
                     android:id="@+id/tvLugar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Lugar:"
+                    android:text="@string/tv_place"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -84,7 +84,7 @@
                     android:inputType="text"
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
-                    android:text="Nombre del lugar" />
+                    android:text="@string/et_place_name" />
 
             </LinearLayout>
 
@@ -101,7 +101,7 @@
                     android:id="@+id/tvDireccion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Dirección:"
+                    android:text="@string/tv_address"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -118,7 +118,7 @@
                     android:inputType="text"
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
-                    android:text="@string/texto_et_direccion_evento" />
+                    android:text="@string/tv_address" />
 
             </LinearLayout>
 
@@ -141,7 +141,7 @@
                         android:id="@+id/tvFecha"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/texto_tv_fecha_evento"
+                        android:text="@string/tv_date"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -154,7 +154,7 @@
                         android:background="@color/white"
                         android:ems="10"
                         android:gravity="center"
-                        android:hint="@string/texto_et_fecha_evento"
+                        android:hint="@string/et_ddmmyyy"
                         android:importantForAutofill="no"
                         android:inputType="date" />
 
@@ -170,7 +170,7 @@
                         android:id="@+id/tvHora"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/texto_tv_hora_evento"
+                        android:text="@string/tv_time"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -182,7 +182,7 @@
                         android:background="@color/white"
                         android:ems="10"
                         android:gravity="center"
-                        android:hint="@string/texto_et_hora_evento"
+                        android:hint="@string/et_00_00"
                         android:importantForAutofill="no"
                         android:inputType="time" />
 
@@ -203,7 +203,7 @@
                     android:id="@+id/tvCategoria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/texto_tv_categoria_evento"
+                    android:text="@string/tv_category"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -225,7 +225,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="5dp"
-                android:text="@string/texto_tv_descripcion_evento"
+                android:text="@string/tv_event_description"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -240,7 +240,7 @@
                 android:background="@color/white"
                 android:ems="10"
                 android:gravity="start|top"
-                android:hint="@string/texto_et_descripcion_evento"
+                android:hint="@string/et_event_description_hint"
                 android:importantForAutofill="no"
                 android:inputType="textMultiLine"
                 android:paddingStart="5dp"
@@ -253,7 +253,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginTop="5dp"
-                android:text="@string/texto_tv_administracion_evento"
+                android:text="@string/tv_admission"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 />
@@ -264,144 +264,30 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"/>
 
-            <TextView
-                android:id="@+id/tvpregunta"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/texto_tv_pregunta"
+            <Switch
+                android:id="@+id/swpregunta"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/sw_event_appropiate_for_minors"
                 android:textSize="18sp"
                 android:textStyle="normal"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:orientation="horizontal">
-
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="5dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/borde">
-
-                    <RadioButton
-                        android:id="@+id/rbSi"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:checked="true"
-                        android:text="@string/texto_si" />
-
-                    <RadioButton
-                        android:id="@+id/rbNo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/texto_no" />
-                </RadioGroup>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tvRangoEdad"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/texto_tv_rango_edad"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/tvEdadMinima"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/texto_edad_minima"
-                            android:textSize="18sp"
-                            android:textStyle="normal" />
-
-                        <EditText
-                            android:id="@+id/etMinima"
-                            android:layout_width="70dp"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="9dp"
-                            android:layout_weight="1"
-                            android:background="@color/white"
-                            android:ems="10"
-                            android:gravity="center"
-                            android:importantForAutofill="no"
-                            android:inputType="number"
-                            android:text="@string/filler__"
-                            tools:ignore="DuplicateSpeakableTextCheck,LabelFor" />
-
-                        <CheckBox
-                            android:id="@+id/ckbMinima"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/tvEdadMaxima"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/texto_edad_maxima"
-                            android:textSize="18sp"
-                            android:textStyle="normal" />
-
-                        <EditText
-                            android:id="@+id/etMaxima"
-                            android:layout_width="70dp"
-                            android:layout_height="50dp"
-                            android:layout_marginStart="5dp"
-                            android:layout_weight="1"
-                            android:background="@color/white"
-                            android:ems="10"
-                            android:gravity="center"
-                            android:importantForAutofill="no"
-                            android:inputType="number"
-                            android:text="@string/filler__"
-                            tools:ignore="LabelFor" />
-
-                        <CheckBox
-                            android:id="@+id/ckbMaxima"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            tools:ignore="TouchTargetSizeCheck" />
-                    </LinearLayout>
-                </LinearLayout>
-
-            </LinearLayout>
+                android:layout_marginBottom="5dp"
+                android:checked="false"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <Switch
                 android:id="@+id/swAceptarSolicitudManualmente"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="@string/texto_aceptar_manualmente"
+                android:text="@string/sw_accept_request_manually"
                 android:textSize="18sp"
                 tools:ignore="UseSwitchCompatOrMaterialXml"
                 android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"/>
+                android:layout_marginEnd="15dp"
+                android:checked="false"/>
 
 
             <TextView
@@ -411,7 +297,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginTop="5dp"
-                android:text="@string/texto_tv_requisitos_adicionales"
+                android:text="@string/tv_extra_requirements"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 />
@@ -445,7 +331,7 @@
                         android:id="@+id/tvAforo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/texto_tv_aforo"
+                        android:text="@string/tv_capacity"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -458,7 +344,7 @@
                             android:id="@+id/tvAforoMinimo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/texto_afo_minimo"
+                            android:text="@string/tv_minimum_capacity"
                             android:textSize="18sp"
                             android:textStyle="normal" />
 
@@ -472,8 +358,9 @@
                             android:gravity="center"
                             android:importantForAutofill="no"
                             android:inputType="number"
-                            android:text="@string/filler__"
-                            tools:ignore="LabelFor" />
+                            android:text="@string/tv_minimumcapacity_0"
+                            tools:ignore="LabelFor"
+                            android:enabled="false"/>
 
                         <CheckBox
                             android:id="@+id/ckbAforoMinimo"
@@ -491,7 +378,7 @@
                             android:id="@+id/tvAforoMaximo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/texto_afo_maximo"
+                            android:text="@string/tv_maximum_capacity"
                             android:textSize="18sp"
                             android:textStyle="normal" />
 
@@ -505,8 +392,9 @@
                             android:gravity="center"
                             android:importantForAutofill="no"
                             android:inputType="number"
-                            android:text="@string/filler__"
-                            tools:ignore="LabelFor" />
+                            android:text="@string/et_maxcapacity_200"
+                            tools:ignore="LabelFor"
+                            android:enabled="false"/>
 
                         <CheckBox
                             android:id="@+id/ckbAforoMaximo"
@@ -516,189 +404,7 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    android:paddingStart="5dp"
-                    android:paddingEnd="5dp"
-                    >
-
-                    <Switch
-                        android:id="@+id/swCancelarSiNoCumpleAforo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/texto_sw_cancelar"
-                        android:textSize="18sp"
-                        tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-                </LinearLayout>
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:orientation="vertical"
-                >
-
-                <TextView
-                    android:id="@+id/tvTiempoCancelacion"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Tiempo para cancelar el evento:"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:layout_marginTop="8dp">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="center_horizontal">
-
-                        <EditText
-                            android:id="@+id/etMeses"
-                            android:layout_width="50dp"
-                            android:layout_height="48dp"
-                            android:background="@drawable/borde"
-                            android:gravity="center"
-                            android:importantForAutofill="no"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:text="@string/filler00"
-                            android:textSize="18sp"
-                            tools:ignore="DuplicateSpeakableTextCheck,LabelFor" />
-
-                        <TextView
-                            android:id="@+id/tvMeses"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="@string/texto_meses"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:importantForAutofill="no"
-                        android:orientation="vertical"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:gravity="center_horizontal">
-
-                        <EditText
-                            android:id="@+id/etDias"
-                            android:layout_width="50dp"
-                            android:layout_height="48dp"
-                            android:importantForAutofill="no"
-                            android:inputType="number"
-                            android:gravity="center"
-                            android:text="@string/filler00"
-                            android:background="@drawable/borde"
-                            android:maxLength="2"
-                            android:textSize="18sp"
-                            tools:ignore="LabelFor" />
-
-                        <TextView
-                            android:id="@+id/tvDias"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="@string/texto_dias"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="center_horizontal">
-
-                        <EditText
-                            android:id="@+id/etHoras"
-                            android:layout_width="50dp"
-                            android:layout_height="48dp"
-                            android:importantForAutofill="no"
-                            android:inputType="number"
-                            android:gravity="center"
-                            android:text="@string/filler00"
-                            android:background="@drawable/borde"
-                            android:maxLength="2"
-                            android:textSize="18sp"
-                            tools:ignore="LabelFor" />
-
-                        <TextView
-                            android:id="@+id/tvHoras"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="@string/texto_horas"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:importantForAutofill="no"
-                        android:orientation="vertical"
-                        android:layout_marginStart="8dp"
-                        android:gravity="center_horizontal">
-
-                        <EditText
-                            android:id="@+id/etMinutos"
-                            android:layout_width="50dp"
-                            android:layout_height="48dp"
-                            android:importantForAutofill="no"
-                            android:inputType="number"
-                            android:gravity="center"
-                            android:text="@string/filler00"
-                            android:background="@drawable/borde"
-                            android:maxLength="2"
-                            android:textSize="18sp"
-                            tools:ignore="LabelFor" />
-
-                        <TextView
-                            android:id="@+id/tvMinutos"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="@string/texto_minutos"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <Switch
-                android:id="@+id/swGaleria"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="@string/texto_sw_galeria_evento"
-                android:textSize="18sp"
-                tools:ignore="UseSwitchCompatOrMaterialXml"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"/>
-
-            <Switch
-                android:id="@+id/swPermitirSubirFotos"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="@string/texto_sw_permitir_subir_fotos"
-                android:textSize="18sp"
-                tools:ignore="UseSwitchCompatOrMaterialXml"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"/>
 
             <TextView
                 android:id="@+id/tvPagos"
@@ -706,14 +412,24 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:text="@string/texto_tv_pagos"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/tv_payments"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@drawable/divisor"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"/>
+
             <TextView
                 android:id="@+id/tvInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/texto_tv_info_pagos"
+                android:text="@string/tv_set_up_payments"
                 android:textSize="18sp"
                 android:textStyle="normal"
                 android:layout_marginStart="15dp"
@@ -726,100 +442,26 @@
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="15dp"
-                android:text="@string/texto_evento_gratuito"
+                android:text="@string/sw_event_free"
                 android:textSize="18sp"
-                tools:ignore="UseSwitchCompatOrMaterialXml" />
+                tools:ignore="UseSwitchCompatOrMaterialXml"
+                android:checked="true"/>
 
-            <LinearLayout
+            <EditText
+                android:id="@+id/etPrecio"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp">
-
-                <TextView
-                    android:id="@+id/tvEntradaGeneral"
-                    android:layout_width="160dp"
-                    android:layout_height="match_parent"
-                    android:text="@string/texto_tv_entrada_general"
-                    android:textSize="18sp"
-                    android:textStyle="normal"
-                    android:background="@drawable/borde"
-                    android:paddingStart="15dp"
-                    android:paddingEnd="15dp"
-                    android:gravity="center"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/filler_dinero"
-                    android:textSize="18sp"
-                    android:textStyle="normal"
-                    android:paddingStart="15dp"
-                    android:paddingEnd="5dp"
-                    />
-
-                <EditText
-                    android:id="@+id/etPrecioEntradaGeneral"
-                    android:layout_width="75dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/borde"
-                    android:gravity="center"
-                    android:importantForAutofill="no"
-                    android:inputType="numberDecimal"
-                    android:paddingStart="15dp"
-                    android:paddingEnd="15dp"
-                    android:text="@string/valor_default_precio_general"
-                    tools:ignore="LabelFor" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_height="100dp"
+                android:background="@drawable/borde"
+                android:gravity="top"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:id="@+id/tvEntradaVIP"
-                    android:layout_width="160dp"
-                    android:layout_height="match_parent"
-                    android:text="@string/texto_tv_entrada_vip"
-                    android:textSize="18sp"
-                    android:textStyle="normal"
-                    android:background="@drawable/borde"
-                    android:paddingStart="15dp"
-                    android:paddingEnd="15dp"
-                    android:gravity="center"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/filler_dinero"
-                    android:textSize="18sp"
-                    android:textStyle="normal"
-                    android:paddingStart="15dp"
-                    android:paddingEnd="5dp"
-                    />
-
-                <EditText
-                    android:id="@+id/etPrecioEntradaVIP"
-                    android:layout_width="75dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/borde"
-                    android:importantForAutofill="no"
-                    android:inputType="numberDecimal"
-                    android:paddingStart="15dp"
-                    android:paddingEnd="15dp"
-                    android:text="@string/valor_default_precio_vip"
-                    tools:ignore="LabelFor" />
-
-            </LinearLayout>
-
+                android:hint="@string/et_prices_description"
+                tools:ignore="LabelFor"
+                android:enabled="false"/>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
@@ -832,14 +474,13 @@
                 android:id="@+id/tvAdvertencia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/texto_tv_advertencia"
+                android:text="@string/tv_alert"
                 android:textSize="18sp"
                 android:textStyle="normal"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"/>
-
             <Button
                 android:id="@+id/btnCrear"
                 android:layout_width="match_parent"
@@ -847,7 +488,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginTop="5dp"
-                android:text="Guardar" />
+                android:text="@string/btn_update_changes" />
         </LinearLayout>
     </ScrollView>
 

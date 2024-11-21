@@ -41,11 +41,11 @@
     <string name="tv_event_name">Digite o nome do evento</string>
     <string name="et_event_place">Insira o local do evento</string>
     <string name="et_event_direction">Insira um endereço (opcional)</string>
-    <string name="tv_date">Data</string>
+    <string name="tv_date">Data:</string>
     <string name="et_ddmmyyy">DD/MM/YYYY</string>
-    <string name="tv_time">Hora</string>
+    <string name="tv_time">Hora:</string>
     <string name="et_00_00">00:00</string>
-    <string name="tv_category">Categoria</string>
+    <string name="tv_category">Categoria:</string>
     <string name="tv_event_description">Descrição do Evento</string>
     <string name="et_event_description_hint">Escreva uma descrição para o evento</string>
     <string name="tv_admission">ADMISSÃO</string>
@@ -53,9 +53,9 @@
     <string name="sw_accept_request_manually">Deseja aceitar solicitações manualmente?</string>
     <string name="tv_extra_requirements">DADOS EXTRAS</string>
     <string name="tv_capacity">Capacidade</string>
-    <string name="tv_minimum_capacity">Capacidade mínima</string>
+    <string name="tv_minimum_capacity">Capacidade mínima:</string>
     <string name="tv_minimumcapacity_0">0</string>
-    <string name="tv_maximum_capacity">Capacidade máxima</string>
+    <string name="tv_maximum_capacity">Capacidade máxima:</string>
     <string name="et_maxcapacity_200">200</string>
     <string name="tv_payments">PAGAMENTOS</string>
     <string name="tv_set_up_payments">Definir preços de eventos</string>
@@ -63,4 +63,9 @@
     <string name="et_prices_description">Descreva os preços do evento</string>
     <string name="tv_alert">O organizador é responsável pela cobrança dos pagamentos</string>
     <string name="btn_create_event">Criar evento</string>
+    <string name="tv_event_name2">Nome do evento</string>
+    <string name="tv_place">Lugar:</string>
+    <string name="et_place_name">Nome do lugar</string>
+    <string name="tv_address">Endereço:</string>
+    <string name="btn_update_changes">Salvar alterações</string>
 </resources>

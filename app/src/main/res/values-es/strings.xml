@@ -41,11 +41,11 @@
     <string name="tv_event_name">Ingresa el nombre del evento</string>
     <string name="et_event_place">Ingresa el lugar del evento</string>
     <string name="et_event_direction">Ingresa una dirección (opcional)</string>
-    <string name="tv_date">Fecha</string>
+    <string name="tv_date">Fecha:</string>
     <string name="et_ddmmyyy">DD/MM/YYYY</string>
-    <string name="tv_time">Hora</string>
+    <string name="tv_time">Hora:</string>
     <string name="et_00_00">00:00</string>
-    <string name="tv_category">Categoría</string>
+    <string name="tv_category">Categoría:</string>
     <string name="tv_event_description">Descripción del evento</string>
     <string name="et_event_description_hint">Escribe una descripción para el evento</string>
     <string name="tv_admission">ADMISIÓN</string>
@@ -53,9 +53,9 @@
     <string name="sw_accept_request_manually">¿Desea aceptar las solicitudes manualmente?</string>
     <string name="tv_extra_requirements">DATOS EXTRA</string>
     <string name="tv_capacity">Aforo</string>
-    <string name="tv_minimum_capacity">Aforo minimo</string>
+    <string name="tv_minimum_capacity">Aforo minimo:</string>
     <string name="tv_minimumcapacity_0">0</string>
-    <string name="tv_maximum_capacity">Aforo máximo</string>
+    <string name="tv_maximum_capacity">Aforo máximo:</string>
     <string name="et_maxcapacity_200">200</string>
     <string name="tv_payments">PAGOS</string>
     <string name="tv_set_up_payments">Establece los precios del evento</string>
@@ -63,4 +63,9 @@
     <string name="et_prices_description">Describe los precios del evento</string>
     <string name="tv_alert">El organizador es el encargado de recolectar los pagos</string>
     <string name="btn_create_event">Crear evento</string>
+    <string name="tv_event_name2">Nombre del evento</string>
+    <string name="tv_place">Lugar:</string>
+    <string name="et_place_name">Nombre del lugar</string>
+    <string name="tv_address">Dirección:</string>
+    <string name="btn_update_changes">Guardar Cambios</string>
 </resources>
