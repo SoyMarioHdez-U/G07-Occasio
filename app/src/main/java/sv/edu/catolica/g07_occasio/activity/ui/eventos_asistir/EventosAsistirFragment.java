@@ -5,34 +5,119 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import cz.msebera.android.httpclient.Header;
+import sv.edu.catolica.g07_occasio.R;
+import sv.edu.catolica.g07_occasio.activity.ui.clases.Evento;
 import sv.edu.catolica.g07_occasio.activity.ui.eventos_asistir.EventosAsistirViewModel;
+import sv.edu.catolica.g07_occasio.activity.ui.home.HomeViewModel;
 import sv.edu.catolica.g07_occasio.databinding.FragmentEventosAsistirBinding;
+import sv.edu.catolica.g07_occasio.sesion_actual.SessionManager;
 
 public class EventosAsistirFragment extends Fragment {
 
-    private FragmentEventosAsistirBinding binding;
+    private RecyclerView recyclerView;
+    private HomeViewModel.EventoAdapter adapter;
+    private List<Evento> listaEventos;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        EventosAsistirViewModel eventos_asistirViewModel =
-                new ViewModelProvider(this).get(EventosAsistirViewModel.class);
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.fragment_eventos_asistir, container, false);
 
-        binding = FragmentEventosAsistirBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        recyclerView = root.findViewById(R.id.recyclerEventosAsistir);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        final TextView textView = binding.textEventosAsistir;
-        eventos_asistirViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        listaEventos = new ArrayList<>();
+        adapter = new HomeViewModel.EventoAdapter(getContext(), listaEventos);
+        recyclerView.setAdapter(adapter);
+
+        cargarEventosAsistir();
+
         return root;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
+    private void cargarEventosAsistir() {
+        String url = "http://192.168.5.179/WebServicePHP/obtenerEventosAsistir.php"; // Cambia por tu IP
+
+
+        SessionManager sessionManager = new SessionManager(requireContext());
+        String idUsuario = sessionManager.getIdUsuario();
+
+        if (idUsuario == null || idUsuario.isEmpty()) {
+            Toast.makeText(getContext(), "Error: Usuario no identificado", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        RequestParams params = new RequestParams();
+        params.put("id_usuario", idUsuario);
+
+        client.get(url, params, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                try {
+                    String respuesta = new String(responseBody);
+                    JSONArray jsonArray = new JSONArray(respuesta);
+
+                    listaEventos.clear();
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject obj = jsonArray.getJSONObject(i);
+
+                        ArrayList<String> fotos = new ArrayList<>();
+                        try {
+                            JSONArray fotosArray = obj.getJSONArray("fotografias");
+                            for (int o = 0; o < fotosArray.length(); o++) {
+                                fotos.add(fotosArray.getString(o));
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                        Evento evento = new Evento(
+                                obj.getString("id_evento"),
+                                obj.getString("nombre_evento"),
+                                obj.getString("organizador"),
+                                obj.getString("fecha_evento"),
+                                obj.getString("hora_evento"),
+                                obj.getString("lugar"),
+                                obj.getString("precios"),
+                                obj.getInt("aforo_minimo"),
+                                obj.getInt("aforo_maximo"),
+                                obj.getString("categoria"),
+                                obj.getString("url_imagen"),
+                                fotos
+                        );
+                        listaEventos.add(evento);
+                    }
+
+                    adapter.notifyDataSetChanged();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Toast.makeText(getContext(), "Error al procesar los datos", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Toast.makeText(getContext(), "Error al conectar con el servidor", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
